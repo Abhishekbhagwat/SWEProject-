@@ -4,6 +4,15 @@ const crypto = require('crypto');
 module.exports = (passport, User) => {
 
   router.post('/login', (req, res, next) => {
+    passport.authenticate('local', (err, user) => {
+      if (err) return res.json({success: false});
+      if (!user) return res.json({success: false, msg: 'no account'});
+      if (!user.verified) return res.json({success: false, msg: 'not verified'})
+      req.logIn(user, (err) => {
+        if (err) return res.json({success: false, msg: 'wrong password'});
+        return res.json({success: true});
+      });
+    })(req, res, next);
   });
 
   router.post('/register', (req, res) => {
