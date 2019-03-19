@@ -11,6 +11,10 @@ const routes = require('./routes/routes');
 const auth = require('./routes/auth');
 const protected = require('./routes/protected');
 
+const Dish = require('./models/dish');
+const Location = require('./models/location');
+const Order = require('./models/order');
+const Store = require('./models/store');
 const User = require('./models/user');
 
 mongoose.connection.on('connected', () => {
@@ -47,7 +51,7 @@ app.use(passport.session());
 
 app.use('/api', routes());
 app.use('/api', auth(passport, User));
-app.use('/api', protected());
+app.use('/api', protected(Dish, Location, Order, Store, User));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server listening on port ${port}!`));

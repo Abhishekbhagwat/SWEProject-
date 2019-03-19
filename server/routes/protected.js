@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-module.exports = () => {
+module.exports = (Dish, Location, Order, Store, User) => {
 
   return router;
 }

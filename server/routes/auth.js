@@ -7,9 +7,22 @@ module.exports = (passport, User) => {
   });
 
   router.post('/register', (req, res) => {
+    (new User({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      orders: []
+    })).save()
+    .then(() => {
+      //SEND VERIFICATION LINK
+      res.json({success: true})
+    }).catch(() => res.json({success: false}));
   });
 
-  router.post('/verify', (req, res) => {
+  router.get('/verify:id', (req, res) => {
+    User.findByIdAndUpdate(req.params.id, {$set: {verified: true}})
+    .then(() => res.json({success: true}))
+    .catch(() => res.json({success: false}));
   });
 
   router.use((req, res, next) => {
