@@ -9,7 +9,7 @@ const dishSchema = new mongoose.Schema({
     type: String
   },
   price: {
-    type: double,
+    type: Number,
     required: true,
   },
   img: {

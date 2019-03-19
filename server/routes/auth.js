@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const crypto = require('crypto');
 
-module.exports = (passport, User) => {
+module.exports = (url, passport, transporter, Token, User) => {
 
   router.post('/login', (req, res, next) => {
     passport.authenticate('local', (err, user) => {
@@ -22,14 +22,26 @@ module.exports = (passport, User) => {
       password: req.body.password,
       orders: []
     })).save()
-    .then(() => {
-      //SEND VERIFICATION LINK
-      res.json({success: true})
+    .then((result) => (new Token({user: result._id})).save())
+    .then((result) => {
+      let mailOptions = {
+        from: 'bitsplease.verify@gmail.com',
+        to: req.body.email,
+        subject: 'Please verify your account!',
+        html:  `<p>Please click on this
+                <a href="${url}/verify/${result._id}">LINK</a>
+                to verify your account.</p>`
+      }
+      transporter.sendMail(mailOptions, (err, info) => {
+        if (err) res.json({success: false, msg: 'email'});
+        else res.json({success: true});
+      });
     }).catch(() => res.json({success: false}));
   });
 
-  router.get('/verify:id', (req, res) => {
-    User.findByIdAndUpdate(req.params.id, {$set: {verified: true}})
+  router.get('/verify/:id', (req, res) => {
+    Token.findByIdAndRemove(req.params.id)
+    .then((token) => User.findByIdAndUpdate(token.user, {$set: {verified: true}}))
     .then(() => res.json({success: true}))
     .catch(() => res.json({success: false}));
   });

@@ -11,20 +11,19 @@ const storeSchema = new mongoose.Schema({
   }],
   location:{
     type: mongoose.Schema.ObjectId,
-    ref: 'Location'
+    ref: 'Location',
     required: true,
   },
-  dishes:[{
+  menu:[{
     type: mongoose.Schema.ObjectId,
     ref: 'Dish'
-    required: true,
   }],
   rating: {
     score: {
       type: Number
     },
     number: {
-      type: Integer
+      type: Number
     }
   },
   cleanliness: {
@@ -37,6 +36,6 @@ const storeSchema = new mongoose.Schema({
   }],
 });
 
-const Store = mongoose.model('foodStore', foodStoreSchema);
+const Store = mongoose.model('foodStore', storeSchema);
 
 module.exports = Store;

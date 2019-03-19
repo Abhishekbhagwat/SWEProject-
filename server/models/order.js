@@ -12,10 +12,9 @@ const orderSchema = new mongoose.Schema({
   dishes: [{
     type: mongoose.Schema.ObjectId,
     ref: 'Dish'
-    required: true,
   }],
   total: {
-    type: double,
+    type: Number,
     required: true,
   },
   paid: {
