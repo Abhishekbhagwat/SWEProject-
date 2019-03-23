@@ -5,17 +5,17 @@ module.exports = (url, passport, transporter, Token, User) => {
 
   router.post('/login', (req, res, next) => {
     passport.authenticate('local', (err, user) => {
-      if (err) return res.json({success: false});
-      if (!user) return res.json({success: false, msg: 'no account'});
-      if (!user.verified) return res.json({success: false, msg: 'not verified'})
+      if (err) return next(err);
+      if (!user) return next('no account');
+      if (!user.verified) return next('not verified');
       req.logIn(user, (err) => {
-        if (err) return res.json({success: false, msg: 'wrong password'});
+        if (err) return next('wrong password');
         return res.json({success: true});
       });
     })(req, res, next);
   });
 
-  router.post('/register', (req, res) => {
+  router.post('/register', (req, res, next) => {
     (new User({
       name: req.body.name,
       email: req.body.email,
@@ -32,23 +32,22 @@ module.exports = (url, passport, transporter, Token, User) => {
                 <a href="${url}/verify/${result._id}">LINK</a>
                 to verify your account.</p>`
       }
-      transporter.sendMail(mailOptions, (err, info) => {
-        if (err) res.json({success: false, msg: 'email'});
-        else res.json({success: true});
-      });
-    }).catch(() => res.json({success: false}));
+      transporter.sendMail(mailOptions)
+      .then(() => res.json({success: true}))
+      .catch((err) => next('invalid email'))
+    }).catch(next);
   });
 
-  router.get('/verify/:id', (req, res) => {
-    Token.findByIdAndRemove(req.params.id)
-    .then((token) => User.findByIdAndUpdate(token.user, {$set: {verified: true}}))
+  router.get('/verify/:id', (req, res, next) => {
+    Token.findOneAndDelete({_id: req.params.id})
+    .then((t) => User.findOneAndUpdate({_id: t.user}, {$set: {verified: true}}))
     .then(() => res.json({success: true}))
-    .catch(() => res.json({success: false}));
+    .catch((err) => next('invalid verification link'));
   });
 
   router.use((req, res, next) => {
     if (req.user) next();
-    else res.json({success: false});
+    else next('not logged in');
   });
 
   router.post('/logout', (req, res) => {

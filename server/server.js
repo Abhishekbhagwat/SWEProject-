@@ -8,9 +8,10 @@ const MongoStore = require('connect-mongo')(session);
 const axios = require('axios');
 const nodemailer = require('nodemailer');
 
-const routes = require('./routes/routes');
+const public = require('./routes/public');
 const auth = require('./routes/auth');
-const protected = require('./routes/protected');
+const customer = require('./routes/customer');
+const storeowner = require('./routes/storeowner');
 
 const Dish = require('./models/dish');
 const Location = require('./models/location');
@@ -24,7 +25,7 @@ const url = "http://localhost:3000/api"
 mongoose.connection.on('connected', () => {
   console.log('Connected to database!');
 });
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -41,6 +42,8 @@ app.use(session({
     mongooseConnection: mongoose.connection,
     stringify: false
   }),
+  resave: true,
+  saveUninitialized: true
 }));
 
 passport.serializeUser((user, done) => done(null, user._id));
@@ -61,9 +64,19 @@ passport.use(new LocalStrategy((username, password, done) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/api', routes());
+app.use('/api', public());
 app.use('/api', auth(url, passport, transporter, Token, User));
-app.use('/api', protected(url, Dish, Location, Order, Store, User));
+app.use('/api', customer(Dish, Location, Order, Store, User));
+app.use('/api/storeowner/', storeowner(Dish, Location, Order, Store, User));
+
+app.use('/*', (req, res) => res.status(404).json({success: false}));
+app.use((err, req, res, next) => {
+  if (res.headersSent) return next(err);
+  if (err instanceof Error) {
+    console.error(err);
+    res.status(500).json({success: false});
+  } else res.status(400).json({success: false, msg: err});
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server listening on port ${port}!`));
