@@ -31,7 +31,7 @@ const orderSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['Reject', 'Accept', 'Completed']
+    enum: ['Rejected', 'Accepted', 'Completed']
   }
 });
 

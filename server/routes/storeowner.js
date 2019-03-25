@@ -58,10 +58,55 @@ router.post('/removeDish', (req, res) => {
 
   //update order completion status
   router.post('/updateCompletionStatus', (req, res) => {
-    Store.findByIdAndUpdate(req.body.orders, {$push: {status: true}})
+    Store.findByIdAndUpdate(req.body.orders, {$push: {status: 'Completed'}})
     .then((stores) => res.json({success: true, stores: stores}))
     .catch(next);
-  })
+  });
+
+  //update order status (accepted)
+  router.post('/OrderAccept/:orderId', (req, res) => {
+    Order.findByIdAndUpdate({_id: req.params.orderId}, {$set: {status: 'Accepted'}})
+    .then((order) => (
+      (new Notification({
+        user: order.user,
+        message: `Your order is received!`,
+        category: 'Accept',
+        data: req.user._id,
+        timestamp: new Date(),
+      })).save()))
+    .then(() => res.json({success: true}))
+    .catch(() => res.json({success: false}));
+  });
+
+  //update order status (rejected)
+  router.post('/OrderAccept/:orderId', (req, res) => {
+    Order.findByIdAndUpdate({_id: req.params.orderId}, {$set: {status: 'Rejected'}})
+    .then((order) => (
+      (new Notification({
+        user: order.user,
+        message: `Your order is rejected!`,
+        category: 'Reject',
+        data: req.user._id,
+        timestamp: new Date(),
+      })).save()))
+    .then(() => res.json({success: true}))
+    .catch(() => res.json({success: false}));
+  });
+
+  //update order status (completed)
+  router.post('/OrderComplete/:orderId', (req, res) => {
+    Order.findByIdAndUpdate({_id: req.params.orderId}, {$set: {status: 'Completed'}})
+    .then((order) => (
+      (new Notification({
+        user: order.user,
+        message: `Your order is ready for collection!`,
+        category: 'Message',
+        data: req.user._id,
+        timestamp: new Date(),
+      })).save()))
+    .then(() => res.json({success: true}))
+    .catch(() => res.json({success: false}));
+  });
 
   return router;
 }

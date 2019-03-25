@@ -59,7 +59,7 @@ module.exports = (Dish, Location, Order, Store, Chat, User) => {
         timestamp: new Date(),
       })).save()))
     .then(() => res.json({success: true}))
-    .catch((err) => res.json({success: false, err}));
+    .catch(() => res.json({success: false}));
   });
 
   //get notifications
@@ -75,6 +75,8 @@ module.exports = (Dish, Location, Order, Store, Chat, User) => {
     .then(() => res.json({success: true}))
     .catch(() => res.json({success: false}));
   });
+
+
 
   return router;
 }

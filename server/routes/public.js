@@ -54,7 +54,7 @@ module.exports = (Dish, Location, Store) => {
 
   //get store menu
   router.get('/menu/:storeId', (req, res, next) => {
-    Dish.find({store: storeId})
+    Dish.find({store: req.params.storeId})
     .then((dishes) => res.json({success: true, dishes: dishes}))
     .catch(next);
   });
