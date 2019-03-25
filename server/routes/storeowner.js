@@ -23,21 +23,21 @@ module.exports = (Dish, Location, Order, Store, User) => {
 
   //update dish name
   router.post('/updateDishName/:name', (req, res) => {
-    Store.findByIdAndUpdate(req.body.dish, {$push: {dish.name: req.params.name}})
+    Store.findByIdAndUpdate(req.body.dish, {$push: {name: req.params.name}})
     .then((stores) => res.json({success: true, stores: stores}))
     .catch(next);
   })
 
   //update dish description
   router.post('/updateDishPrice/:description', (req, res) => {
-    Store.findByIdAndUpdate(req.body.dish, {$push: {dish.description: req.params.description}})
+    Store.findByIdAndUpdate(req.body.dish, {$push: {description: req.params.description}})
     .then((stores) => res.json({success: true, stores: stores}))
     .catch(next);
   })
 
   //update dish price
   router.post('/updateDishPrice/:price', (req, res) => {
-    Store.findByIdAndUpdate(req.body.dish, {$push: {dish.price: req.params.price}})
+    Store.findByIdAndUpdate(req.body.dish, {$push: {price: req.params.price}})
     .then((stores) => res.json({success: true, stores: stores}))
     .catch(next);
   })
@@ -58,7 +58,7 @@ router.post('/removeDish', (req, res) => {
 
   //update order completion status
   router.post('/updateCompletionStatus', (req, res) => {
-    Store.findByIdAndUpdate(req.body.orders, {$push: {order.completed: true}})
+    Store.findByIdAndUpdate(req.body.orders, {$push: {status: true}})
     .then((stores) => res.json({success: true, stores: stores}))
     .catch(next);
   })

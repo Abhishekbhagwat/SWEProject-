@@ -5,6 +5,10 @@ const orderSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'User'
   },
+  storeowner: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User'
+  },
   store: {
     type: mongoose.Schema.ObjectId,
     ref: 'Store'
@@ -24,6 +28,10 @@ const orderSchema = new mongoose.Schema({
   completed: {
     type: Boolean,
     default: false
+  },
+  status: {
+    type: String,
+    enum: ['Reject', 'Accept', 'Completed']
   }
 });
 
