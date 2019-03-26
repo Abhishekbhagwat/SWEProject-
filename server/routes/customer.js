@@ -1,6 +1,20 @@
 const router = require('express').Router();
 
-module.exports = (Dish, Location, Order, Store, Chat, User) => {
+module.exports = (Dish, Location, Order, Store, User) => {
+
+  //update user name
+  router.post('/updateProfile', (req, res, next) => {
+    User.update(req.user, {$set: {name: req.body.name}})
+    .then(() => res.json({success: true}))
+    .catch(next)
+  });
+
+  //update email
+  router.post('/updateEmail', (req, res, next) => {
+    User.update(req.user, {$set: {email: req.body.email}})
+    .then(() => res.json({success: true}))
+    .catch(next)
+  });
 
   //get all orders by user
   router.get('/orders', (req, res, next) => {
@@ -46,6 +60,26 @@ module.exports = (Dish, Location, Order, Store, Chat, User) => {
       } else res.json({success: false, msg:"order cannot be canceled"});
     }).catch('next');
   })
+
+  //give rating to the store (only possible after an order is completed)
+  router.post('/rating', (req, res, next) => {
+    Order.find({_id: req.body._id})
+    .then((order) => {
+      if (order.status == 'completed') {
+        Order.update(order, {$set: {rating: req.body.rating}});
+        Store.findOneAndUpdate({_id: order.store}, {
+          $set: {
+            rating: {
+              score: (order.store.rating.number * order.store.rating.score + order.rating) / (order.store.rating.number + 1), 
+              number: order.store.rating.number + 1 
+            }
+          }
+        });
+      } else next('You cannot rate the store as your order is not completed.');
+    })
+    .then(() => res.json({success: true}))
+    .catch(next);
+  });
 
   //get messages
   router.get('/messages', (req, res, next) => {
