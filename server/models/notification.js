@@ -4,27 +4,27 @@ const notificationSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
-    required: true,
+    required: true
   },
   message: {
     type: String,
-    required: true,
+    required: true
   },
   category: {
     type: String,
-    enum: ['Message', 'Request', 'Accept', 'Reject', 'Cancel', 'New Order', 'Other'],
-    required: true,
+    enum: ['message', 'order', 'other'],
+    required: true
   },
   timestamp: {
     type: Date,
-    required: true,
+    required: true
   },
   read: {
     type: Boolean,
-    default: false,
+    default: false
   },
   data: {
-    type: String,
+    type: String
   },
 });
 

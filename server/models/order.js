@@ -5,10 +5,6 @@ const orderSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'User'
   },
-  storeowner: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'User'
-  },
   store: {
     type: mongoose.Schema.ObjectId,
     ref: 'Store'
@@ -19,20 +15,21 @@ const orderSchema = new mongoose.Schema({
   }],
   total: {
     type: Number,
-    required: true,
+    required: true
+  },
+  timestamp: {
+    type: Date,
+    required: true
   },
   paid: {
     type: Boolean,
     default: false
   },
-  completed: {
-    type: Boolean,
-    default: false
-  },
   status: {
     type: String,
-    enum: ['Rejected', 'Accepted', 'Completed']
-  }
+    enum: ['pending', 'accepted', 'rejected', 'completed'],
+    default: 'pending'
+  },
 });
 
 const Order = mongoose.model('Order', orderSchema);

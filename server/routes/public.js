@@ -18,7 +18,7 @@ module.exports = (Dish, Location, Store) => {
 
   //get store by ID
   router.get('/store/:id', (req, res) => {
-    Store.find({_id: req.params.id}, {orders: 0})
+    Store.find({_id: req.params.id})
     .then((store) => res.json({success: true, store: store}))
     .catch(next)
   });

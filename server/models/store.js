@@ -3,16 +3,16 @@ const mongoose = require('mongoose');
 const storeSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: true
   },
   cuisine: [{
     type: String,
-    required: true,
+    required: true
   }],
   location:{
     type: mongoose.Schema.ObjectId,
     ref: 'Location',
-    required: true,
+    required: true
   },
   menu:[{
     type: mongoose.Schema.ObjectId,

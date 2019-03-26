@@ -8,104 +8,101 @@ module.exports = (Dish, Location, Order, Store, User) => {
   });
 
   //add a dish
-  router.post('/addDish', (req, res) => {
-    Promise.all(req.body.dishes.map((dishId) => Dish.findById(dishId)))
-    .then((dish) => {
-      (new Dish({
-        name: req.body.name,
-        store: req.body.store,
-        price: req.body.price,
-      })).save()
-      .then(() => res.json({success: true}))
-      .catch(next);
-    }).catch(() => next('dishes addition unsuccessful'));
+  router.post('/addDish', (req, res, next) => {
+    (new Dish({
+      name: req.body.name,
+      store: req.user.store,
+      description: req.body.description,
+      price: req.body.price,
+      img: req.body.img
+    })).save()
+    .then(() => res.json({success: true}))
+    .catch(next);
   });
 
-  //update dish name
-  router.post('/updateDishName/:name', (req, res) => {
-    Store.findByIdAndUpdate(req.body.dish, {$push: {name: req.params.name}})
-    .then((stores) => res.json({success: true, stores: stores}))
+  //update dish
+  router.post('/updateDish', (req, res, next) => {
+    let update = {};
+    if (req.body.name) update.name = req.body.name;
+    if (req.body.description) update.name = req.body.description;
+    if (req.body.price) update.name = req.body.price;
+    if (req.body.img) update.name = req.body.img;
+    Dish.findOneAndUpdate(req.body.dish, {$set: update})
+    .then(() => res.json({success: true}))
     .catch(next);
   })
 
-  //update dish description
-  router.post('/updateDishPrice/:description', (req, res) => {
-    Store.findByIdAndUpdate(req.body.dish, {$push: {description: req.params.description}})
-    .then((stores) => res.json({success: true, stores: stores}))
+  //remove a dish
+  router.post('/removeDish', (req, res, next) => {
+    Dish.findOneAndRemove({_id: req.body.dish})
+    .then(() => res.json({success: true}))
     .catch(next);
-  })
-
-  //update dish price
-  router.post('/updateDishPrice/:price', (req, res) => {
-    Store.findByIdAndUpdate(req.body.dish, {$push: {price: req.params.price}})
-    .then((stores) => res.json({success: true, stores: stores}))
-    .catch(next);
-  })
-
-//remove a dish
-router.post('/removeDish', (req, res) => {
-   Dish.remove({_id: req.body.dish})
-   .then(() => res.json({success: true}))
-   .catch(() => res.json({success: false}));
   });
 
-  //get all orders by store
-  router.get('/storeOrders', (req, res) => {
-    Promise.all(req.store.orders.map((order) => Order.findById(order)))
+  //get pending orders
+  router.get('/pending', (req, res, next) => {
+    Orders.find({store: req.user.store, status: 'pending'})
+    .sort({timestamp: 1})
     .then((orders) => res.json({success: true, orders: orders}))
     .catch(next);
   });
 
-  //update order completion status
-  router.post('/updateCompletionStatus', (req, res) => {
-    Store.findByIdAndUpdate(req.body.orders, {$push: {status: 'Completed'}})
-    .then((stores) => res.json({success: true, stores: stores}))
+  //get current order queue
+  router.get('/queue', (req, res, next) => {
+    Store.find({_id: req.user.store})
+    .sort({timestamp: 1})
+    .populate('orders')
+    .then((store) => res.json({success: true, orders: store.orders}))
     .catch(next);
   });
 
-  //update order status (accepted)
-  router.post('/OrderAccept/:orderId', (req, res) => {
-    Order.findByIdAndUpdate({_id: req.params.orderId}, {$set: {status: 'Accepted'}})
-    .then((order) => (
-      (new Notification({
-        user: order.user,
-        message: `Your order is received!`,
-        category: 'Accept',
-        data: req.user._id,
-        timestamp: new Date(),
-      })).save()))
-    .then(() => res.json({success: true}))
-    .catch(() => res.json({success: false}));
+  //accept order
+  router.post('/accept', (req, res, next) => {
+    Order.findOneAndUpdate({_id: req.body.order}, {$set: {status: 'accepted'}})
+    .then((order) => {
+      Store.findOneAndUpdate({_id: req.user.store}, {$push: {orders: order._id}})
+      .then((store) => (
+        (new Notification({
+          user: order.user,
+          message: `${store.name} has accepted your order!`,
+          category: 'order',
+          data: order._id,
+          timestamp: new Date(),
+        })).save()
+      )).then(() => res.json({success: true}))
+    }).catch(next);
   });
 
-  //update order status (rejected)
-  router.post('/OrderAccept/:orderId', (req, res) => {
-    Order.findByIdAndUpdate({_id: req.params.orderId}, {$set: {status: 'Rejected'}})
+  //reject order
+  router.post('/reject', (req, res, next) => {
+    Order.findOneAndUpdate({_id: req.body.order}, {$set: {status: 'rejected'}})
     .then((order) => (
       (new Notification({
         user: order.user,
-        message: `Your order is rejected!`,
-        category: 'Reject',
-        data: req.user._id,
+        message: `${store.name} has rejected your order!`,
+        category: 'order',
+        data: order._id,
         timestamp: new Date(),
-      })).save()))
-    .then(() => res.json({success: true}))
-    .catch(() => res.json({success: false}));
+      })).save()
+    )).then(() => res.json({success: true}))
+    .catch(next);
   });
 
-  //update order status (completed)
-  router.post('/OrderComplete/:orderId', (req, res) => {
-    Order.findByIdAndUpdate({_id: req.params.orderId}, {$set: {status: 'Completed'}})
-    .then((order) => (
-      (new Notification({
-        user: order.user,
-        message: `Your order is ready for collection!`,
-        category: 'Message',
-        data: req.user._id,
-        timestamp: new Date(),
-      })).save()))
-    .then(() => res.json({success: true}))
-    .catch(() => res.json({success: false}));
+  //complete order
+  router.post('/complete', (req, res, next) => {
+    Order.findOneAndUpdate({_id: req.body.order}, {$set: {status: 'completed'}})
+    .then((order) => {
+      Store.findOneAndUpdate({_id: req.user.store}, {$pull: {orders: order._id}})
+      .then((store) => (
+        (new Notification({
+          user: order.user,
+          message: `Your order from ${store.name} is ready!`,
+          category: 'order',
+          data: order._id,
+          timestamp: new Date(),
+        })).save()
+      )).then(() => res.json({success: true}))
+    }).catch(next);
   });
 
   return router;
