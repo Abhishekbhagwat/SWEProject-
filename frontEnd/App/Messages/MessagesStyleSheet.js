@@ -1,0 +1,165 @@
+//
+//  MessagesStyleSheet.js
+//  Burp
+//
+//  Created by Abhishek Bhagwat.
+//  Copyright © 2018 [Company]. All rights reserved.
+//
+
+import { StyleSheet } from "react-native"
+
+const styles = StyleSheet.create({
+	messagesView: {
+		backgroundColor: "white",
+		flex: 1,
+		alignItems: "flex-end",
+	},
+	headerView: {
+		backgroundColor: "transparent",
+		marginTop: 21,
+		width: 325,
+		height: 20.5,
+		alignSelf: "center",
+		flexDirection: "row",
+		alignItems: "center",
+	},
+	headerMenuDarkImage: {
+		resizeMode: "center",
+		backgroundColor: "transparent",
+		width: 16.5,
+		height: 11,
+	},
+	cartButtonButton: {
+		backgroundColor: "transparent",
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "center",
+		padding: 0,
+		width: 12,
+		height: 12,
+	},
+	cartButtonButtonImage: {
+		resizeMode: "contain",
+	},
+	cartButtonButtonText: {
+		color: "black",
+		fontFamily: ".SFNSText",
+		fontSize: 12,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+	},
+	messagesText: {
+		color: "rgb(117, 117, 117)",
+		fontFamily: "Avenir-Medium",
+		fontSize: 15,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+		backgroundColor: "transparent",
+	},
+	groupView: {
+		backgroundColor: "transparent",
+		marginRight: 21,
+		marginTop: 31,
+		width: 318,
+		height: 85,
+	},
+	titleText: {
+		color: "rgb(117, 117, 117)",
+		fontFamily: "Avenir-Medium",
+		fontSize: 17,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		lineHeight: 24.5,
+		backgroundColor: "transparent",
+		marginLeft: 30,
+		marginRight: 97,
+		marginTop: 8,
+	},
+	yourOrderIsBeingText: {
+		color: "black",
+		fontFamily: "Verdana",
+		fontSize: 10,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		backgroundColor: "transparent",
+		marginBottom: 14,
+	},
+	maskGroup8ClippedImage: {
+		resizeMode: "center",
+		backgroundColor: "transparent",
+		height: 85,
+		width: null,
+	},
+	titleTwoText: {
+		color: "rgb(117, 117, 117)",
+		fontFamily: "Avenir-Medium",
+		fontSize: 14,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		lineHeight: 29,
+		backgroundColor: "transparent",
+		marginRight: 103,
+		marginTop: 21,
+	},
+	group2View: {
+		backgroundColor: "transparent",
+		marginRight: 21,
+		marginTop: 31,
+		width: 318,
+		height: 85,
+		flexDirection: "row",
+		alignItems: "center",
+	},
+	maskGroup9ClippedImage: {
+		resizeMode: "center",
+		backgroundColor: "transparent",
+		width: 85,
+		height: 85,
+	},
+	groupTwoView: {
+		backgroundColor: "transparent",
+		marginTop: 9,
+		width: 208.5,
+		height: 62.5,
+	},
+	titleThreeText: {
+		color: "rgb(117, 117, 117)",
+		fontFamily: "Avenir-Medium",
+		fontSize: 17,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		lineHeight: 24.5,
+		backgroundColor: "transparent",
+		marginLeft: 2,
+		marginRight: 147,
+	},
+	doYouWantToAddEText: {
+		color: "black",
+		fontFamily: "Verdana",
+		fontSize: 10,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		backgroundColor: "transparent",
+	},
+	titleFourText: {
+		color: "rgb(117, 117, 117)",
+		fontFamily: "Avenir-Medium",
+		fontSize: 14,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		lineHeight: 29,
+		backgroundColor: "transparent",
+		marginLeft: 2,
+		marginTop: 12,
+	},
+})
+
+export default styles

@@ -1,0 +1,148 @@
+//
+//  SignInStyleSheet.js
+//  Burp
+//
+//  Created by Abhishek Bhagwat.
+//  Copyright © 2018 [Company]. All rights reserved.
+//
+
+import { StyleSheet } from "react-native"
+
+const styles = StyleSheet.create({
+	signInView: {
+		backgroundColor: "white",
+		flex: 1,
+	},
+	signUpImage: {
+		resizeMode: "cover",
+		backgroundColor: "transparent",
+		marginRight: -48,
+		height: 705,
+		width: null,
+	},
+	titleText: {
+		color: "white",
+		fontFamily: "Avenir-Medium",
+		fontSize: 26,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		lineHeight: 42,
+		backgroundColor: "transparent",
+		marginLeft: 24,
+		marginTop: 92,
+		alignSelf: "stretch",
+	},
+	usernameView: {
+		backgroundColor: "rgba(255, 255, 255, 0.35)",
+		borderRadius: 25,
+		shadowColor: "rgba(0, 0, 0, 0.08)",
+		shadowRadius: 17.5,
+		shadowOpacity: 1,
+		marginTop: 116,
+		width: 325,
+		height: 50,
+		flexDirection: "row",
+		alignItems: "center",
+	},
+	personMaterialImage: {
+		resizeMode: "center",
+		backgroundColor: "transparent",
+		marginLeft: 24,
+		width: 10,
+		height: 10,
+	},
+	usernameTextInput: {
+		color: "white",
+		fontFamily: "Avenir-Medium",
+		fontSize: 15,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		backgroundColor: "transparent",
+		padding: 0,
+		marginLeft: 9,
+	},
+	passwordView: {
+		backgroundColor: "rgba(255, 255, 255, 0.35)",
+		borderRadius: 25,
+		shadowColor: "rgba(0, 0, 0, 0.08)",
+		shadowRadius: 17.5,
+		shadowOpacity: 1,
+		marginTop: 25,
+		width: 325,
+		height: 50,
+		flexDirection: "row",
+		alignItems: "center",
+	},
+	icon24pxImage: {
+		resizeMode: "center",
+		backgroundColor: "transparent",
+		marginLeft: 25,
+		width: 12,
+		height: 12,
+	},
+	passwordTextInput: {
+		color: "white",
+		fontFamily: "Avenir-Medium",
+		fontSize: 15,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		backgroundColor: "transparent",
+		padding: 0,
+		marginLeft: 7,
+	},
+	signInButtonButton: {
+		backgroundColor: "rgb(0, 188, 212)",
+		borderRadius: 25,
+		shadowColor: "rgba(0, 0, 0, 0.07)",
+		shadowRadius: 7.5,
+		shadowOpacity: 1,
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "center",
+		padding: 0,
+		marginTop: 25,
+		width: 325,
+		height: 50,
+	},
+	signInButtonButtonImage: {
+		resizeMode: "contain",
+		marginRight: 10,
+	},
+	signInButtonButtonText: {
+		color: "white",
+		fontFamily: "Avenir-Medium",
+		fontSize: 16,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "center",
+	},
+	signUpText: {
+		color: "white",
+		fontFamily: "Avenir-Medium",
+		fontSize: 13,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		lineHeight: 21,
+		backgroundColor: "transparent",
+		marginLeft: 25,
+		marginTop: 34,
+	},
+	forgotPasswordText: {
+		color: "white",
+		fontFamily: "Avenir-Medium",
+		fontSize: 13,
+		fontStyle: "normal",
+		fontWeight: "normal",
+		textAlign: "left",
+		lineHeight: 21,
+		backgroundColor: "transparent",
+		marginRight: 24,
+		marginTop: 34,
+	},
+})
+
+export default styles
