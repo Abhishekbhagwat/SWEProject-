@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.supernova:android-ui-toolkit:1.1.3@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-ui-toolkit-1.1.3.aar/70245124f9d01e9b37bd7f9134146663/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-ui-toolkit-1.1.3.aar/70245124f9d01e9b37bd7f9134146663/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.supernova/android-ui-toolkit/1.1.3/373412c69d53e6640a87ad10baac6152f8cb4371/android-ui-toolkit-1.1.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

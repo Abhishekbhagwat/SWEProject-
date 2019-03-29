@@ -1,0 +1,54 @@
+<resources>
+	
+	<!-- Project level resources -->
+	<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+		<item name="colorPrimary">@color/color_primary</item>
+		<item name="colorPrimaryDark">@color/color_primary_dark</item>
+		<item name="colorAccent">@color/color_accent</item>
+	</style>
+	
+	<!-- NorthSpineActivity -->
+	<style name="NorthSpineActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- NorthSpineTwoActivity -->
+	<style name="NorthSpineTwoActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- OrderHistoryActivity -->
+	<style name="OrderHistoryActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- CartActivity -->
+	<style name="CartActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- ProductDetailsActivity -->
+	<style name="ProductDetailsActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- MessagesActivity -->
+	<style name="MessagesActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- GalleryCategoryActivity -->
+	<style name="GalleryCategoryActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- PaymentDetailsActivity -->
+	<style name="PaymentDetailsActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- CheckoutActivity -->
+	<style name="CheckoutActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- EditUserProfileActivity -->
+	<style name="EditUserProfileActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- NavigationMenuActivity -->
+	<style name="NavigationMenuActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- SignUpActivity -->
+	<style name="SignUpActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- SignInActivity -->
+	<style name="SignInActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- StartPageActivity -->
+	<style name="StartPageActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+	
+	<!-- WelcomeActivity -->
+	<style name="WelcomeActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+</resources>

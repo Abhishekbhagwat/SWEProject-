@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/messages_two_constraint_layout"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="21dp"
+        android:layout_width="@dimen/messages_activity_messages_two_constraint_layout_width"
+        android:layout_height="@dimen/messages_activity_messages_two_constraint_layout_height"
+        android:layout_marginTop="@dimen/messages_activity_messages_two_constraint_layout_margin_top"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/messages_text_view"
+            tools:layout_editor_absoluteX="122dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_avenir_medium"
+            android:gravity="center"
+            android:text="@string/messages_activity_messages_text_view_text"
+            android:textColor="@color/messages_activity_messages_text_view_text_color"
+            android:textSize="@dimen/messages_activity_messages_text_view_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/header_menu_dark_image_view"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@drawable/header_menu_dark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

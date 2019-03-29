@@ -1,0 +1,74 @@
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/welcome_constraint_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/welcome_activity_welcome_constraint_layout_background_color">
+
+	<ImageView
+		android:id="@+id/background_image_view"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:scaleType="centerCrop"
+		android:src="@drawable/background"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:layout_editor_absoluteX="0dp"
+		tools:layout_editor_absoluteY="0dp"/>
+
+	<Button
+		android:id="@+id/getstarted_button"
+		android:layout_width="@dimen/welcome_activity_getstarted_button_width"
+		android:layout_height="@dimen/welcome_activity_getstarted_button_height"
+		android:layout_marginBottom="@dimen/welcome_activity_getstarted_button_margin_bottom"
+		android:background="@drawable/welcome_activity_getstarted_button_ripple"
+		android:fontFamily="@font/font_avenir_medium"
+		android:gravity="center"
+		android:text="@string/welcome_activity_getstarted_button_text"
+		android:textColor="@color/welcome_activity_getstarted_button_text_color"
+		android:textSize="@dimen/welcome_activity_getstarted_button_text_size"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		tools:layout_editor_absoluteX="25dp"
+		tools:layout_editor_absoluteY="572dp"/>
+
+	<TextView
+		android:id="@+id/subheading_text_view"
+		android:layout_width="@dimen/welcome_activity_subheading_text_view_width"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="@dimen/welcome_activity_subheading_text_view_margin_bottom"
+		android:fontFamily="@font/font_avenir_light"
+		android:gravity="center"
+		android:lineSpacingMultiplier="1.16"
+		android:text="@string/welcome_activity_subheading_text_view_text"
+		android:textColor="@color/welcome_activity_subheading_text_view_text_color"
+		android:textSize="@dimen/welcome_activity_subheading_text_view_text_size"
+		app:layout_constraintBottom_toTopOf="@+id/getstarted_button"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		tools:layout_editor_absoluteX="25dp"
+		tools:layout_editor_absoluteY="489dp"/>
+
+	<TextView
+		android:id="@+id/title_text_view"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="@dimen/welcome_activity_title_text_view_margin_start"
+		android:layout_marginRight="@dimen/welcome_activity_title_text_view_margin_end"
+		android:layout_marginTop="@dimen/welcome_activity_title_text_view_margin_top"
+		android:fontFamily="@font/font_avenir_book"
+		android:gravity="center"
+		android:lineSpacingMultiplier="1.18"
+		android:text="@string/welcome_activity_title_text_view_text"
+		android:textColor="@color/welcome_activity_title_text_view_text_color"
+		android:textSize="@dimen/welcome_activity_title_text_view_text_size"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:layout_editor_absoluteX="57dp"
+		tools:layout_editor_absoluteY="435dp"/>
+</android.support.constraint.ConstraintLayout>

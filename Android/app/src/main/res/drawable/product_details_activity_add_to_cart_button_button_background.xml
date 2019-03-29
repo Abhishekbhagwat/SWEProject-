@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<stroke
+		android:color="@color/product_details_activity_add_to_cart_button_button_border_color"
+		android:width="@dimen/product_details_activity_add_to_cart_button_button_border_size"/>
+
+	<corners android:radius="@dimen/product_details_activity_add_to_cart_button_button_radius"/>
+</shape>

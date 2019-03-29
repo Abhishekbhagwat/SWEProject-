@@ -1,0 +1,208 @@
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/cart_constraint_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/cart_activity_cart_constraint_layout_background_color">
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/group3_constraint_layout"
+		android:layout_width="@dimen/cart_activity_group3_constraint_layout_width"
+		android:layout_height="@dimen/cart_activity_group3_constraint_layout_height"
+		android:layout_marginTop="@dimen/cart_activity_group3_constraint_layout_margin_top"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/cart_two_constraint_layout"
+		tools:layout_editor_absoluteX="24dp"
+		tools:layout_editor_absoluteY="116dp">
+	
+		<android.support.constraint.ConstraintLayout
+			android:id="@+id/category_constraint_layout"
+			android:layout_width="0dp"
+			android:layout_height="@dimen/cart_activity_category_constraint_layout_height"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="0dp"
+			tools:layout_editor_absoluteY="0dp">
+		
+			<TextView
+				android:id="@+id/title_text_view"
+				android:layout_width="@dimen/cart_activity_title_text_view_width"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/font_avenir_medium"
+				android:gravity="start"
+				android:lineSpacingMultiplier="1.17"
+				android:text="@string/cart_activity_title_text_view_text"
+				android:textColor="@color/cart_activity_title_text_view_text_color"
+				android:textSize="@dimen/cart_activity_title_text_view_text_size"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				tools:layout_editor_absoluteX="212dp"
+				tools:layout_editor_absoluteY="14dp"/>
+		
+			<ImageView
+				android:id="@+id/bitmap_image_view"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:scaleType="center"
+				android:src="@drawable/bitmap_2"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				tools:layout_editor_absoluteX="0dp"
+				tools:layout_editor_absoluteY="0dp"/>
+		</android.support.constraint.ConstraintLayout>
+	
+		<View
+			android:id="@+id/line_constraint_layout"
+			android:layout_width="0dp"
+			android:layout_height="@dimen/cart_activity_line_constraint_layout_height"
+			android:background="@color/cart_activity_line_constraint_layout_background_color"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			tools:layout_editor_absoluteX="0dp"
+			tools:layout_editor_absoluteY="154dp"/>
+	</android.support.constraint.ConstraintLayout>
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/cart_two_constraint_layout"
+		android:layout_width="@dimen/cart_activity_cart_two_constraint_layout_width"
+		android:layout_height="@dimen/cart_activity_cart_two_constraint_layout_height"
+		android:layout_marginLeft="@dimen/cart_activity_cart_two_constraint_layout_margin_start"
+		android:layout_marginTop="@dimen/cart_activity_cart_two_constraint_layout_margin_top"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:layout_editor_absoluteX="25dp"
+		tools:layout_editor_absoluteY="21dp">
+
+		<TextView
+			android:id="@+id/cart_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="center"
+			android:text="@string/cart_activity_cart_text_view_text"
+			android:textColor="@color/cart_activity_cart_text_view_text_color"
+			android:textSize="@dimen/cart_activity_cart_text_view_text_size"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="143dp"
+			tools:layout_editor_absoluteY="0dp"/>
+
+		<TextView
+			android:id="@+id/title_two_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="32dp"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:lineSpacingMultiplier="1.16"
+			android:text="@string/cart_activity_title_two_text_view_text"
+			android:textColor="@color/cart_activity_title_two_text_view_text_color"
+			android:textSize="@dimen/cart_activity_title_two_text_view_text_size"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+	
+		<ImageView
+			android:id="@+id/header_menu_dark_image_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/cart_activity_header_menu_dark_image_view_margin_top"
+			android:scaleType="center"
+			android:src="@drawable/header_menu_dark"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="0dp"
+			tools:layout_editor_absoluteY="4dp"/>
+	</android.support.constraint.ConstraintLayout>
+
+	<View
+		android:id="@+id/line_two_constraint_layout"
+		android:layout_width="wrap_content"
+		android:layout_height="200dp"
+		android:background="@color/cart_activity_line_two_constraint_layout_background_color"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent" />
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/group2_constraint_layout"
+		android:layout_width="@dimen/cart_activity_group2_constraint_layout_width"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="8dp"
+		android:layout_marginBottom="8dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/line_two_constraint_layout">
+
+		<TextView
+			android:id="@+id/title_three_text_view"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="@dimen/cart_activity_title_three_text_view_margin_start"
+			android:layout_marginRight="@dimen/cart_activity_title_three_text_view_margin_end"
+			android:layout_marginBottom="8dp"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:lineSpacingMultiplier="0.88"
+			android:text="@string/cart_activity_title_three_text_view_text"
+			android:textColor="@color/cart_activity_title_three_text_view_text_color"
+			android:textSize="@dimen/cart_activity_title_three_text_view_text_size"
+			app:layout_constraintBottom_toTopOf="@+id/subtotal300_text_view"
+			app:layout_constraintHorizontal_bias="1.0"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent" />
+
+		<TextView
+			android:id="@+id/subtotal300_text_view"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:text="@string/cart_activity_subtotal300_text_view_text"
+			android:textColor="@color/cart_activity_subtotal300_text_view_text_color"
+			android:textSize="@dimen/cart_activity_subtotal300_text_view_text_size"
+			app:layout_constraintBottom_toTopOf="@+id/takeaway_fee020_text_view"
+			app:layout_constraintHorizontal_bias="1.0"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent" />
+
+		<TextView
+			android:id="@+id/takeaway_fee020_text_view"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="16dp"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:text="@string/cart_activity_takeaway_fee020_text_view_text"
+			android:textColor="@color/cart_activity_takeaway_fee020_text_view_text_color"
+			android:textSize="@dimen/cart_activity_takeaway_fee020_text_view_text_size"
+			app:layout_constraintBottom_toTopOf="@+id/placeorder_button"
+			app:layout_constraintHorizontal_bias="0.0"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent" />
+
+		<Button
+			android:id="@+id/placeorder_button"
+			android:layout_width="150dp"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="24dp"
+			android:background="@drawable/cart_activity_placeorder_button_ripple"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="center"
+			android:text="@string/cart_activity_placeorder_button_text"
+			android:textColor="@color/cart_activity_placeorder_button_text_color"
+			android:textSize="@dimen/cart_activity_placeorder_button_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent" />
+
+	</android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

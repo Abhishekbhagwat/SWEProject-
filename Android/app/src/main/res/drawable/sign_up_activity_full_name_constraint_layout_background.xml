@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<corners android:radius="@dimen/sign_up_activity_full_name_constraint_layout_radius"/>
+
+	<solid android:color="@color/sign_up_activity_full_name_constraint_layout_background_color"/>
+</shape>

@@ -1,0 +1,303 @@
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/edit_user_profile_constraint_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/edit_user_profile_activity_edit_user_profile_constraint_layout_background_color">
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/updateprofile_constraint_layout"
+		android:layout_width="@dimen/edit_user_profile_activity_updateprofile_constraint_layout_width"
+		android:layout_height="@dimen/edit_user_profile_activity_updateprofile_constraint_layout_height"
+		android:layout_marginBottom="@dimen/edit_user_profile_activity_updateprofile_constraint_layout_margin_bottom"
+		android:background="@drawable/edit_user_profile_activity_updateprofile_constraint_layout_background"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		tools:layout_editor_absoluteX="25dp"
+		tools:layout_editor_absoluteY="575dp">
+	
+		<TextView
+			android:id="@+id/update_profile_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="center"
+			android:lineSpacingMultiplier="0.73"
+			android:text="@string/edit_user_profile_activity_update_profile_text_view_text"
+			android:textColor="@color/edit_user_profile_activity_update_profile_text_view_text_color"
+			android:textSize="@dimen/edit_user_profile_activity_update_profile_text_view_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="97dp"
+			tools:layout_editor_absoluteY="14dp"/>
+	</android.support.constraint.ConstraintLayout>
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/mobile_constraint_layout"
+		android:layout_width="@dimen/edit_user_profile_activity_mobile_constraint_layout_width"
+		android:layout_height="@dimen/edit_user_profile_activity_mobile_constraint_layout_height"
+		android:layout_marginBottom="@dimen/edit_user_profile_activity_mobile_constraint_layout_margin_bottom"
+		android:background="@drawable/edit_user_profile_activity_mobile_constraint_layout_background"
+		app:layout_constraintBottom_toTopOf="@+id/updateprofile_constraint_layout"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		tools:layout_editor_absoluteX="25dp"
+		tools:layout_editor_absoluteY="500dp">
+
+		<EditText
+			android:id="@+id/mobile_number_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="9dp"
+			android:background="@android:color/transparent"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:hint="Mobile Number"
+			android:inputType="phone"
+			android:lineSpacingMultiplier="1.17"
+			android:text="@string/edit_user_profile_activity_mobile_number_text_view_text"
+			android:textColor="@color/edit_user_profile_activity_mobile_number_text_view_text_color"
+			android:textColorHint="@color/edit_user_profile_activity_mobile_number_text_view_text_color"
+			android:textSize="@dimen/edit_user_profile_activity_mobile_number_text_view_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/icon24px_image_view"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageView
+			android:id="@+id/icon24px_image_view"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="@dimen/edit_user_profile_activity_icon24px_image_view_margin_start"
+			android:scaleType="center"
+			android:src="@drawable/icon_24px_5"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+	</android.support.constraint.ConstraintLayout>
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/email_constraint_layout"
+		android:layout_width="@dimen/edit_user_profile_activity_email_constraint_layout_width"
+		android:layout_height="@dimen/edit_user_profile_activity_email_constraint_layout_height"
+		android:layout_marginTop="@dimen/edit_user_profile_activity_email_constraint_layout_margin_top"
+		android:background="@drawable/edit_user_profile_activity_email_constraint_layout_background"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/dob_constraint_layout"
+		tools:layout_editor_absoluteX="25dp"
+		tools:layout_editor_absoluteY="425dp">
+
+		<EditText
+			android:id="@+id/email_address_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="9dp"
+			android:background="@android:color/transparent"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:hint="Email Address"
+			android:inputType="textEmailAddress"
+			android:lineSpacingMultiplier="1.17"
+			android:text="@string/edit_user_profile_activity_email_address_text_view_text"
+			android:textColor="@color/edit_user_profile_activity_email_address_text_view_text_color"
+			android:textColorHint="@color/edit_user_profile_activity_mobile_number_text_view_text_color"
+			android:textSize="@dimen/edit_user_profile_activity_email_address_text_view_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/icon24px_two_image_view"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageView
+			android:id="@+id/icon24px_two_image_view"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="@dimen/edit_user_profile_activity_icon24px_two_image_view_margin_start"
+			android:scaleType="center"
+			android:src="@drawable/icon_24px"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+	</android.support.constraint.ConstraintLayout>
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/dob_constraint_layout"
+		android:layout_width="@dimen/edit_user_profile_activity_dob_constraint_layout_width"
+		android:layout_height="@dimen/edit_user_profile_activity_dob_constraint_layout_height"
+		android:layout_marginTop="@dimen/edit_user_profile_activity_dob_constraint_layout_margin_top"
+		android:background="@drawable/edit_user_profile_activity_dob_constraint_layout_background"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/name_constraint_layout"
+		tools:layout_editor_absoluteX="25dp"
+		tools:layout_editor_absoluteY="350dp">
+
+		<EditText
+			android:id="@+id/date_of_birth_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="9dp"
+			android:background="@android:color/transparent"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:hint="Date of Birth"
+			android:inputType="date"
+			android:lineSpacingMultiplier="1.17"
+			android:text="@string/edit_user_profile_activity_date_of_birth_text_view_text"
+			android:textColor="@color/edit_user_profile_activity_date_of_birth_text_view_text_color"
+			android:textColorHint="@color/edit_user_profile_activity_mobile_number_text_view_text_color"
+			android:textSize="@dimen/edit_user_profile_activity_date_of_birth_text_view_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/icon24px_three_image_view"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageView
+			android:id="@+id/icon24px_three_image_view"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="@dimen/edit_user_profile_activity_icon24px_three_image_view_margin_start"
+			android:scaleType="center"
+			android:src="@drawable/icon_24px_8"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+	</android.support.constraint.ConstraintLayout>
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/name_constraint_layout"
+		android:layout_width="@dimen/edit_user_profile_activity_name_constraint_layout_width"
+		android:layout_height="@dimen/edit_user_profile_activity_name_constraint_layout_height"
+		android:layout_marginTop="@dimen/edit_user_profile_activity_name_constraint_layout_margin_top"
+		android:background="@drawable/edit_user_profile_activity_name_constraint_layout_background"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/image_constraint_layout"
+		tools:layout_editor_absoluteX="25dp"
+		tools:layout_editor_absoluteY="275dp">
+
+		<EditText
+			android:id="@+id/full_name_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="@dimen/edit_user_profile_activity_full_name_text_view_margin_start"
+			android:background="@android:color/transparent"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:hint="Full Name"
+			android:inputType="textPersonName"
+			android:lineSpacingMultiplier="1.17"
+			android:text="@string/edit_user_profile_activity_full_name_text_view_text"
+			android:textColor="@color/edit_user_profile_activity_full_name_text_view_text_color"
+			android:textColorHint="@color/edit_user_profile_activity_mobile_number_text_view_text_color"
+			android:textSize="@dimen/edit_user_profile_activity_full_name_text_view_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toRightOf="@+id/person_material_image_view"
+			app:layout_constraintTop_toTopOf="parent" />
+	
+		<ImageView
+			android:id="@+id/person_material_image_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="@dimen/edit_user_profile_activity_person_material_image_view_margin_start"
+			android:scaleType="center"
+			android:src="@drawable/person___material"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="25dp"
+			tools:layout_editor_absoluteY="20dp"/>
+	</android.support.constraint.ConstraintLayout>
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/image_constraint_layout"
+		android:layout_width="@dimen/edit_user_profile_activity_image_constraint_layout_width"
+		android:layout_height="@dimen/edit_user_profile_activity_image_constraint_layout_height"
+		android:layout_marginRight="@dimen/edit_user_profile_activity_image_constraint_layout_margin_end"
+		android:layout_marginTop="@dimen/edit_user_profile_activity_image_constraint_layout_margin_top"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/editprofile_constraint_layout"
+		tools:layout_editor_absoluteX="125dp"
+		tools:layout_editor_absoluteY="100dp">
+	
+		<ImageView
+			android:id="@+id/bitmap_image_view"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="@dimen/edit_user_profile_activity_bitmap_image_view_margin_end"
+			android:scaleType="center"
+			android:src="@drawable/bitmap_7"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="0dp"
+			tools:layout_editor_absoluteY="0dp"/>
+	
+		<ImageView
+			android:id="@+id/edit_image_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/edit_user_profile_activity_edit_image_view_margin_bottom"
+			android:scaleType="center"
+			android:src="@drawable/edit"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			tools:layout_editor_absoluteX="115dp"
+			tools:layout_editor_absoluteY="90dp"/>
+	</android.support.constraint.ConstraintLayout>
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/editprofile_constraint_layout"
+		android:layout_width="@dimen/edit_user_profile_activity_editprofile_constraint_layout_width"
+		android:layout_height="@dimen/edit_user_profile_activity_editprofile_constraint_layout_height"
+		android:layout_marginTop="@dimen/edit_user_profile_activity_editprofile_constraint_layout_margin_top"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:layout_editor_absoluteX="25dp"
+		tools:layout_editor_absoluteY="21dp">
+	
+		<ImageView
+			android:id="@+id/header_options_dark_image_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:scaleType="center"
+			android:src="@drawable/header_options_dark"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="313dp"
+			tools:layout_editor_absoluteY="4dp"/>
+	
+		<TextView
+			android:id="@+id/edit_profile_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="center"
+			android:text="@string/edit_user_profile_activity_edit_profile_text_view_text"
+			android:textColor="@color/edit_user_profile_activity_edit_profile_text_view_text_color"
+			android:textSize="@dimen/edit_user_profile_activity_edit_profile_text_view_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="113dp"
+			tools:layout_editor_absoluteY="0dp"/>
+	
+		<ImageButton
+			android:id="@+id/header_menu_dark_button"
+			android:layout_width="@dimen/edit_user_profile_activity_header_menu_dark_button_width"
+			android:layout_height="@dimen/edit_user_profile_activity_header_menu_dark_button_height"
+			android:background="?attr/selectableItemBackground"
+			android:src="@drawable/header_menu_dark"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="0dp"
+			tools:layout_editor_absoluteY="4dp"/>
+	</android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

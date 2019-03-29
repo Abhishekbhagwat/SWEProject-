@@ -1,0 +1,194 @@
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/messages_constraint_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/messages_activity_messages_constraint_layout_background_color">
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/can14_constraint_layout"
+		android:layout_width="@dimen/messages_activity_can14_constraint_layout_width"
+		android:layout_height="@dimen/messages_activity_can14_constraint_layout_height"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="@dimen/messages_activity_can14_constraint_layout_margin_top"
+		android:layout_marginEnd="8dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/messages_two_constraint_layout">
+
+		<TextView
+			android:id="@+id/title_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="24dp"
+			android:layout_marginTop="@dimen/messages_activity_title_text_view_margin_top"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:lineSpacingMultiplier="1.02"
+			android:text="@string/messages_activity_title_text_view_text"
+			android:textColor="@color/messages_activity_title_text_view_text_color"
+			android:textSize="@dimen/messages_activity_title_text_view_text_size"
+			app:layout_constraintLeft_toRightOf="@+id/mask_group8_clipped_image_view"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageView
+			android:id="@+id/mask_group8_clipped_image_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:scaleType="center"
+			android:src="@drawable/mask_group_8_clipped"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="0dp"
+			tools:layout_editor_absoluteY="0dp" />
+
+		<TextView
+			android:id="@+id/title_two_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="24dp"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:lineSpacingMultiplier="1.45"
+			android:text="@string/messages_activity_title_two_text_view_text"
+			android:textColor="@color/messages_activity_title_two_text_view_text_color"
+			android:textSize="@dimen/messages_activity_title_two_text_view_text_size"
+			app:layout_constraintStart_toEndOf="@+id/mask_group8_clipped_image_view"
+			app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
+
+		<TextView
+			android:id="@+id/your_order_is_being_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="24dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginEnd="8dp"
+			android:layout_marginBottom="8dp"
+			android:fontFamily="@font/font_verdana"
+			android:gravity="start"
+			android:text="@string/messages_activity_your_order_is_being_text_view_text"
+			android:textColor="@color/messages_activity_your_order_is_being_text_view_text_color"
+			android:textSize="@dimen/messages_activity_your_order_is_being_text_view_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/mask_group8_clipped_image_view"
+			app:layout_constraintTop_toBottomOf="@+id/title_two_text_view" />
+	</android.support.constraint.ConstraintLayout>
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/koufu_constraint_layout"
+		android:layout_width="@dimen/messages_activity_koufu_constraint_layout_width"
+		android:layout_height="@dimen/messages_activity_koufu_constraint_layout_height"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="@dimen/messages_activity_koufu_constraint_layout_margin_top"
+		android:layout_marginEnd="8dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/can14_constraint_layout">
+
+		<TextView
+			android:id="@+id/title_four_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="24dp"
+			android:layout_marginTop="32dp"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:lineSpacingMultiplier="1.45"
+			android:text="@string/messages_activity_title_four_text_view_text"
+			android:textColor="@color/messages_activity_title_four_text_view_text_color"
+			android:textSize="@dimen/messages_activity_title_four_text_view_text_size"
+			app:layout_constraintStart_toEndOf="@+id/mask_group9_clipped_image_view"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/title_three_text_view"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="24dp"
+			android:layout_marginTop="8dp"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:lineSpacingMultiplier="1.02"
+			android:text="@string/messages_activity_title_three_text_view_text"
+			android:textColor="@color/messages_activity_title_three_text_view_text_color"
+			android:textSize="@dimen/messages_activity_title_three_text_view_text_size"
+			app:layout_constraintStart_toEndOf="@+id/mask_group9_clipped_image_view"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/do_you_want_to_add_etext_view"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="24dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginEnd="8dp"
+			android:layout_marginBottom="8dp"
+			android:fontFamily="@font/font_verdana"
+			android:gravity="start"
+			android:text="@string/messages_activity_do_you_want_to_add_etext_view_text"
+			android:textColor="@color/messages_activity_do_you_want_to_add_etext_view_text_color"
+			android:textSize="@dimen/messages_activity_do_you_want_to_add_etext_view_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/mask_group9_clipped_image_view"
+			app:layout_constraintTop_toBottomOf="@+id/title_four_text_view" />
+
+		<ImageView
+			android:id="@+id/mask_group9_clipped_image_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:scaleType="center"
+			android:src="@drawable/mask_group_9_clipped"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="0dp"
+			tools:layout_editor_absoluteY="0dp" />
+	</android.support.constraint.ConstraintLayout>
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/messages_two_constraint_layout"
+		android:layout_width="@dimen/messages_activity_messages_two_constraint_layout_width"
+		android:layout_height="@dimen/messages_activity_messages_two_constraint_layout_height"
+		android:layout_marginTop="@dimen/messages_activity_messages_two_constraint_layout_margin_top"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:layout_editor_absoluteX="25dp"
+		tools:layout_editor_absoluteY="21dp">
+
+		<TextView
+			android:id="@+id/messages_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="center"
+			android:text="@string/messages_activity_messages_text_view_text"
+			android:textColor="@color/messages_activity_messages_text_view_text_color"
+			android:textSize="@dimen/messages_activity_messages_text_view_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="122dp"
+			tools:layout_editor_absoluteY="0dp"/>
+	
+		<ImageView
+			android:id="@+id/header_menu_dark_image_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:scaleType="center"
+			android:src="@drawable/header_menu_dark"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:layout_editor_absoluteX="0dp"
+			tools:layout_editor_absoluteY="4dp"/>
+	</android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

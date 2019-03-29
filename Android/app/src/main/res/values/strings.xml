@@ -1,0 +1,149 @@
+<resources>
+	
+	<!-- Project level resources -->
+	<string name="app_name">Project</string>
+	
+	<!-- NorthSpineActivity -->
+	<string name="north_spine_activity_title"></string>
+	<string name="north_spine_activity_chickenrice_button_text">CHICKEN RICE\n$3.00</string>
+	<string name="north_spine_activity_rice_stall_text_view_text">RICE STALL </string>
+	
+	<!-- NorthSpineTwoActivity -->
+	<string name="north_spine_two_activity_title"></string>
+	<string name="north_spine_two_activity_ricestall_button_text">RICE STALL </string>
+	<string name="north_spine_two_activity_north_spine_food_cou_text_view_text">NORTH SPINE FOOD COURT</string>
+	<string name="north_spine_two_activity_vegetablestall_button_text">VEGETABLE STALL\n</string>
+	
+	<!-- OrderHistoryActivity -->
+	<string name="order_history_activity_title"></string>
+	<string name="order_history_activity_title_text_view_text">CHICKEN RICE\n$3.00\nNORTH SPINE FOOD COURT</string>
+	<string name="order_history_activity_order_history_text_view_text">ORDER HISTORY</string>
+	<string name="order_history_activity_title_two_text_view_text">TAKOYAKI\n$2.40\nCANTEEN 2\n</string>
+	
+	<!-- CartActivity -->
+	<string name="cart_activity_title"></string>
+	<string name="cart_activity_title_text_view_text">CHICKEN RICE\n$3.00\nNORTH SPINE FOOD COURT</string>
+	<string name="cart_activity_placeorder_button_text">PLACE ORDER</string>
+	<string name="cart_activity_cart_text_view_text">CART</string>
+	<string name="cart_activity_title_two_text_view_text">MY ORDERS\n</string>
+	<string name="cart_activity_title_three_text_view_text">TOTAL                                      $3.20</string>
+	<string name="cart_activity_subtotal300_text_view_text">Subtotal                                                       $3.00 </string>
+	<string name="cart_activity_takeaway_fee020_text_view_text">Takeaway fee                                               $0.20</string>
+	
+	<!-- ProductDetailsActivity -->
+	<string name="product_details_activity_title"></string>
+	<string name="product_details_activity_add_to_cart_button_button_text">ADD TO CART</string>
+	<string name="product_details_activity_buy_now_button_text">BUY NOW</string>
+	<string name="product_details_activity_text_view_text_view_text">1</string>
+	<string name="product_details_activity_text_view_two_text_view_text">+</string>
+	<string name="product_details_activity_text_view_three_text_view_text">_</string>
+	<string name="product_details_activity_title_text_view_text">QUANTITY</string>
+	<string name="product_details_activity_title_two_text_view_text">SIZE</string>
+	<string name="product_details_activity_l_text_view_text">L</string>
+	<string name="product_details_activity_text_text_view_text">Contains:\n	Steamed Chicken\n	Cucumbers\n	Scallions\n	Miso Soup</string>
+	<string name="product_details_activity_price_text_view_text">$3.00</string>
+	<string name="product_details_activity_title_three_text_view_text">CHICKEN RICE</string>
+	<string name="product_details_activity_brand_text_view_text">North Spine Food Court\n</string>
+	<string name="product_details_activity_count_text_view_text">24.5K</string>
+	<string name="product_details_activity_product_details_text_view_text">PRODUCT DETAILS</string>
+	<string name="product_details_activity_title_four_text_view_text">RATINGS\n</string>
+	<string name="product_details_activity_l_two_text_view_text">A</string>
+	
+	<!-- MessagesActivity -->
+	<string name="messages_activity_title"></string>
+	<string name="messages_activity_title_text_view_text">CANTEEN 14</string>
+	<string name="messages_activity_title_two_text_view_text">Korean Cuisine </string>
+	<string name="messages_activity_your_order_is_being_text_view_text">Your order is being prepared. Kindly all…</string>
+	<string name="messages_activity_title_three_text_view_text">KOUFU</string>
+	<string name="messages_activity_title_four_text_view_text">Pasta Express</string>
+	<string name="messages_activity_do_you_want_to_add_etext_view_text">Do you want to add extra onions to you…</string>
+	<string name="messages_activity_messages_text_view_text">MESSAGES</string>
+	
+	<!-- GalleryCategoryActivity -->
+	<string name="gallery_category_activity_title"></string>
+	<string name="gallery_category_activity_southspinecategory_button_text">SOUTH SPINE\n</string>
+	<string name="gallery_category_activity_northspinecategory_button_text">NORTH SPINE \n</string>
+	<string name="gallery_category_activity_browse_text_view_text">BROWSE</string>
+	
+	<!-- PaymentDetailsActivity -->
+	<string name="payment_details_activity_title"></string>
+	<string name="payment_details_activity_add_new_card_text_view_text">ADD NEW CARD</string>
+	<string name="payment_details_activity_exp_month_text_view_text">Exp. Month</string>
+	<string name="payment_details_activity_exp_year_text_view_text">Exp. Year</string>
+	<string name="payment_details_activity_card_number_text_view_text">Card Number</string>
+	<string name="payment_details_activity_card_owner_text_view_text">Card Owner</string>
+	<string name="payment_details_activity_title_text_view_text">ADD NEW CARD</string>
+	<string name="payment_details_activity_name_text_view_text">USERNAME</string>
+	<string name="payment_details_activity_card_owner_two_text_view_text">Card Owner</string>
+	<string name="payment_details_activity_month_text_view_text">03/18</string>
+	<string name="payment_details_activity_issued_text_view_text">Issued</string>
+	<string name="payment_details_activity_month_two_text_view_text">03/21</string>
+	<string name="payment_details_activity_expire_text_view_text">Expire</string>
+	<string name="payment_details_activity_number_text_view_text">2345 4344 5678 6756</string>
+	<string name="payment_details_activity_card_number_two_text_view_text">Card Number</string>
+	<string name="payment_details_activity_payment_details_text_view_text">PAYMENT DETAILS</string>
+	
+	<!-- CheckoutActivity -->
+	<string name="checkout_activity_title"></string>
+	<string name="checkout_activity_continuepayment_button_text">CONTINUE</string>
+	<string name="checkout_activity_method_name_text_view_text">MASTERCARD</string>
+	<string name="checkout_activity_value_text_view_text">**** **** **** 4352</string>
+	<string name="checkout_activity_method_name_two_text_view_text">NETS</string>
+	<string name="checkout_activity_value_two_text_view_text">**** **** **** 1999</string>
+	<string name="checkout_activity_method_name_three_text_view_text">VISA</string>
+	<string name="checkout_activity_value_three_text_view_text">**** **** **** 2323</string>
+	<string name="checkout_activity_method_name_four_text_view_text">PAYPAL</string>
+	<string name="checkout_activity_value_four_text_view_text">******@gmail.com</string>
+	<string name="checkout_activity_title_text_view_text">PAYMENT METHOD</string>
+	<string name="checkout_activity_checkout_text_view_text">CHECKOUT</string>
+	
+	<!-- EditUserProfileActivity -->
+	<string name="edit_user_profile_activity_title"></string>
+	<string name="edit_user_profile_activity_update_profile_text_view_text">UPDATE PROFILE</string>
+	<string name="edit_user_profile_activity_mobile_number_text_view_text">Mobile Number</string>
+	<string name="edit_user_profile_activity_email_address_text_view_text">Email Address</string>
+	<string name="edit_user_profile_activity_date_of_birth_text_view_text">Date of Birth</string>
+	<string name="edit_user_profile_activity_full_name_text_view_text">Full Name</string>
+	<string name="edit_user_profile_activity_edit_profile_text_view_text">EDIT PROFILE</string>
+	
+	<!-- NavigationMenuActivity -->
+	<string name="navigation_menu_activity_title"></string>
+	<string name="navigation_menu_activity_signout_text_view_text">SIGN OUT</string>
+	<string name="navigation_menu_activity_settings_text_view_text">SETTINGS</string>
+	<string name="navigation_menu_activity_orders_button_text">ORDERS</string>
+	<string name="navigation_menu_activity_messages_button_text">MESSAGES</string>
+	<string name="navigation_menu_activity_profile_button_text">PROFILE</string>
+	<string name="navigation_menu_activity_name_text_view_text">USERNAME </string>
+	<string name="navigation_menu_activity_post_text_view_text">Points </string>
+	
+	<!-- SignUpActivity -->
+	<string name="sign_up_activity_title"></string>
+	<string name="sign_up_activity_sign_in_instead_button_text">Sign In Instead</string>
+	<string name="sign_up_activity_signupbutton_button_text">SIGN UP</string>
+	<string name="sign_up_activity_mobile_number_text_view_text">Mobile Number</string>
+	<string name="sign_up_activity_date_of_birth_text_view_text">Date of Birth</string>
+	<string name="sign_up_activity_email_address_text_view_text">Email Address</string>
+	<string name="sign_up_activity_full_name_text_view_text">Full Name</string>
+	<string name="sign_up_activity_title_text_view_text">Sign Up</string>
+	
+	<!-- SignInActivity -->
+	<string name="sign_in_activity_title"></string>
+	<string name="sign_in_activity_forgot_password_text_view_text">Forgot Password?</string>
+	<string name="sign_in_activity_signinbutton_button_text">SIGN IN</string>
+	<string name="sign_in_activity_password_text_view_text">Password</string>
+	<string name="sign_in_activity_username_text_view_text">Username</string>
+	<string name="sign_in_activity_title_text_view_text">Sign In</string>
+	
+	<!-- StartPageActivity -->
+	<string name="start_page_activity_title"></string>
+	<string name="start_page_activity_signup_button_text">SIGN UP</string>
+	<string name="start_page_activity_signin_button_text">SIGN IN</string>
+	<string name="start_page_activity_tagline_text_view_text">Sign In or Register with us to cure those hunger pangs</string>
+	<string name="start_page_activity_title_text_view_text">Let’s get started on satisfying your craving</string>
+	
+	<!-- WelcomeActivity -->
+	<string name="welcome_activity_title"></string>
+	<string name="welcome_activity_getstarted_button_text">GET STARTED</string>
+	<string name="welcome_activity_subheading_text_view_text">Order food from your favorite spots and forget about waiting for it</string>
+	<string name="welcome_activity_title_text_view_text">Welcome to Burp </string>
+</resources>

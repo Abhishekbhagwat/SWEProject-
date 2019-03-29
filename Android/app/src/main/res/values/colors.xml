@@ -1,0 +1,236 @@
+<resources>
+	
+	<!-- Project level resources -->
+	<color name="color_primary">#000000</color>
+	<color name="color_primary_dark">#000000</color>
+	<color name="color_accent">#000000</color>
+	<color name="click_overlay">#555555</color>
+	<color name="default_hint">#C6C6CB</color>
+	<color name="material_bottom_sheet_title">#8a000000</color>
+	<color name="material_bottom_sheet_item">#de000000</color>
+	
+	<!-- NorthSpineActivity -->
+	<color name="north_spine_activity_north_spine_constraint_layout_background_color">#FFFFFF</color>
+	<color name="north_spine_activity_chickenrice_button_text_color">#757575</color>
+	<color name="north_spine_activity_rice_stall_text_view_text_color">#757575</color>
+	
+	<!-- NorthSpineTwoActivity -->
+	<color name="north_spine_two_activity_north_spine_constraint_layout_background_color">#FFFFFF</color>
+	<color name="north_spine_two_activity_ricestall_button_text_color">#757575</color>
+	<color name="north_spine_two_activity_north_spine_food_cou_text_view_text_color">#757575</color>
+	<color name="north_spine_two_activity_vegetablestall_button_text_color">#757575</color>
+	
+	<!-- OrderHistoryActivity -->
+	<color name="order_history_activity_order_history_constraint_layout_background_color">#FFFFFF</color>
+	<color name="order_history_activity_title_text_view_text_color">#757575</color>
+	<color name="order_history_activity_line_constraint_layout_background_color">#979797</color>
+	<color name="order_history_activity_order_history_text_view_text_color">#757575</color>
+	<color name="order_history_activity_title_two_text_view_text_color">#757575</color>
+	<color name="order_history_activity_line_two_constraint_layout_background_color">#979797</color>
+	
+	<!-- CartActivity -->
+	<color name="cart_activity_cart_constraint_layout_background_color">#FFFFFF</color>
+	<color name="cart_activity_title_text_view_text_color">#757575</color>
+	<color name="cart_activity_line_constraint_layout_background_color">#979797</color>
+	<color name="cart_activity_placeorder_button_background_color">#00BCD4</color>
+	<color name="cart_activity_placeorder_button_text_color">#FFFFFF</color>
+	<color name="cart_activity_placeorder_button_border_color">#979797</color>
+	<color name="cart_activity_cart_text_view_text_color">#757575</color>
+	<color name="cart_activity_title_two_text_view_text_color">#757575</color>
+	<color name="cart_activity_line_two_constraint_layout_background_color">#93979797</color>
+	<color name="cart_activity_title_three_text_view_text_color">#FFFFFF</color>
+	<color name="cart_activity_subtotal300_text_view_text_color">#FFFFFF</color>
+	<color name="cart_activity_takeaway_fee020_text_view_text_color">#FFFFFF</color>
+	
+	<!-- ProductDetailsActivity -->
+	<color name="product_details_activity_product_details_constraint_layout_background_color">#FFFFFF</color>
+	<color name="product_details_activity_add_to_cart_button_button_text_color">#00BCD4</color>
+	<color name="product_details_activity_add_to_cart_button_button_border_color">#00BCD4</color>
+	<color name="product_details_activity_buy_now_button_background_color">#00BCD4</color>
+	<color name="product_details_activity_buy_now_button_text_color">#FFFFFF</color>
+	<color name="product_details_activity_buy_now_button_border_color">#979797</color>
+	<color name="product_details_activity_box_constraint_layout_background_color">#FFFFFF</color>
+	<color name="product_details_activity_box_constraint_layout_border_color">#979797</color>
+	<color name="product_details_activity_text_view_text_view_text_color">#757575</color>
+	<color name="product_details_activity_text_view_two_text_view_text_color">#757575</color>
+	<color name="product_details_activity_text_view_three_text_view_text_color">#757575</color>
+	<color name="product_details_activity_title_text_view_text_color">#757575</color>
+	<color name="product_details_activity_box_two_constraint_layout_background_color">#FFFFFF</color>
+	<color name="product_details_activity_box_two_constraint_layout_border_color">#979797</color>
+	<color name="product_details_activity_title_two_text_view_text_color">#757575</color>
+	<color name="product_details_activity_l_text_view_text_color">#757575</color>
+	<color name="product_details_activity_text_text_view_text_color">#757575</color>
+	<color name="product_details_activity_price_text_view_text_color">#FFFFFF</color>
+	<color name="product_details_activity_title_three_text_view_text_color">#FFFFFF</color>
+	<color name="product_details_activity_brand_text_view_text_color">#FFFFFF</color>
+	<color name="product_details_activity_count_text_view_text_color">#FFFFFF</color>
+	<color name="product_details_activity_product_details_text_view_text_color">#FFFFFF</color>
+	<color name="product_details_activity_box_three_constraint_layout_background_color">#FFFFFF</color>
+	<color name="product_details_activity_box_three_constraint_layout_border_color">#979797</color>
+	<color name="product_details_activity_title_four_text_view_text_color">#757575</color>
+	<color name="product_details_activity_l_two_text_view_text_color">#757575</color>
+	
+	<!-- MessagesActivity -->
+	<color name="messages_activity_messages_constraint_layout_background_color">#FFFFFF</color>
+	<color name="messages_activity_title_text_view_text_color">#757575</color>
+	<color name="messages_activity_title_two_text_view_text_color">#757575</color>
+	<color name="messages_activity_your_order_is_being_text_view_text_color">#000000</color>
+	<color name="messages_activity_title_three_text_view_text_color">#757575</color>
+	<color name="messages_activity_title_four_text_view_text_color">#757575</color>
+	<color name="messages_activity_do_you_want_to_add_etext_view_text_color">#000000</color>
+	<color name="messages_activity_messages_text_view_text_color">#757575</color>
+	
+	<!-- GalleryCategoryActivity -->
+	<color name="gallery_category_activity_gallery_category_constraint_layout_background_color">#FFFFFF</color>
+	<color name="gallery_category_activity_southspinecategory_button_text_color">#757575</color>
+	<color name="gallery_category_activity_northspinecategory_button_text_color">#757575</color>
+	<color name="gallery_category_activity_browse_text_view_text_color">#757575</color>
+	<color name="gallery_category_activity_header_menu_dark_button_text_color">#000000</color>
+	
+	<!-- PaymentDetailsActivity -->
+	<color name="payment_details_activity_payment_details_constraint_layout_background_color">#FFFFFF</color>
+	<color name="payment_details_activity_button_constraint_layout_background_color">#00BCD4</color>
+	<color name="payment_details_activity_button_constraint_layout_border_color">#979797</color>
+	<color name="payment_details_activity_add_new_card_text_view_text_color">#FFFFFF</color>
+	<color name="payment_details_activity_month_constraint_layout_background_color">#EEEEEE</color>
+	<color name="payment_details_activity_month_constraint_layout_border_color">#979797</color>
+	<color name="payment_details_activity_exp_month_text_view_text_color">#757575</color>
+	<color name="payment_details_activity_year_constraint_layout_background_color">#EEEEEE</color>
+	<color name="payment_details_activity_year_constraint_layout_border_color">#979797</color>
+	<color name="payment_details_activity_exp_year_text_view_text_color">#757575</color>
+	<color name="payment_details_activity_number_constraint_layout_background_color">#EEEEEE</color>
+	<color name="payment_details_activity_number_constraint_layout_border_color">#979797</color>
+	<color name="payment_details_activity_card_number_text_view_text_color">#757575</color>
+	<color name="payment_details_activity_owner_constraint_layout_background_color">#EEEEEE</color>
+	<color name="payment_details_activity_owner_constraint_layout_border_color">#979797</color>
+	<color name="payment_details_activity_card_owner_text_view_text_color">#757575</color>
+	<color name="payment_details_activity_title_text_view_text_color">#757575</color>
+	<color name="payment_details_activity_card_constraint_layout_background_color">#00BCD4</color>
+	<color name="payment_details_activity_card_constraint_layout_border_color">#979797</color>
+	<color name="payment_details_activity_name_text_view_text_color">#FFFFFF</color>
+	<color name="payment_details_activity_card_owner_two_text_view_text_color">#FFFFFF</color>
+	<color name="payment_details_activity_month_text_view_text_color">#FFFFFF</color>
+	<color name="payment_details_activity_issued_text_view_text_color">#FFFFFF</color>
+	<color name="payment_details_activity_month_two_text_view_text_color">#FFFFFF</color>
+	<color name="payment_details_activity_expire_text_view_text_color">#FFFFFF</color>
+	<color name="payment_details_activity_number_text_view_text_color">#FFFFFF</color>
+	<color name="payment_details_activity_card_number_two_text_view_text_color">#FFFFFF</color>
+	<color name="payment_details_activity_payment_details_text_view_text_color">#757575</color>
+	<color name="payment_details_activity_header_menu_dark_button_text_color">#000000</color>
+	
+	<!-- CheckoutActivity -->
+	<color name="checkout_activity_checkout_constraint_layout_background_color">#FFFFFF</color>
+	<color name="checkout_activity_continuepayment_button_background_color">#00BCD4</color>
+	<color name="checkout_activity_continuepayment_button_text_color">#FFFFFF</color>
+	<color name="checkout_activity_continuepayment_button_border_color">#979797</color>
+	<color name="checkout_activity_mastercard_constraint_layout_background_color">#FFFFFF</color>
+	<color name="checkout_activity_mastercard_constraint_layout_border_color">#979797</color>
+	<color name="checkout_activity_method_name_text_view_text_color">#757575</color>
+	<color name="checkout_activity_image_constraint_layout_background_color">#FFFFFF</color>
+	<color name="checkout_activity_image_constraint_layout_border_color">#979797</color>
+	<color name="checkout_activity_value_text_view_text_color">#757575</color>
+	<color name="checkout_activity_mastercard_copy_constraint_layout_background_color">#FFFFFF</color>
+	<color name="checkout_activity_mastercard_copy_constraint_layout_border_color">#979797</color>
+	<color name="checkout_activity_method_name_two_text_view_text_color">#757575</color>
+	<color name="checkout_activity_image_two_constraint_layout_background_color">#FFFFFF</color>
+	<color name="checkout_activity_image_two_constraint_layout_border_color">#979797</color>
+	<color name="checkout_activity_value_two_text_view_text_color">#757575</color>
+	<color name="checkout_activity_visa_constraint_layout_background_color">#FFFFFF</color>
+	<color name="checkout_activity_visa_constraint_layout_border_color">#979797</color>
+	<color name="checkout_activity_method_name_three_text_view_text_color">#757575</color>
+	<color name="checkout_activity_image_three_constraint_layout_background_color">#FFFFFF</color>
+	<color name="checkout_activity_image_three_constraint_layout_border_color">#979797</color>
+	<color name="checkout_activity_value_three_text_view_text_color">#757575</color>
+	<color name="checkout_activity_paypal_constraint_layout_background_color">#FFFFFF</color>
+	<color name="checkout_activity_paypal_constraint_layout_border_color">#979797</color>
+	<color name="checkout_activity_method_name_four_text_view_text_color">#757575</color>
+	<color name="checkout_activity_value_four_text_view_text_color">#757575</color>
+	<color name="checkout_activity_title_text_view_text_color">#757575</color>
+	<color name="checkout_activity_checkout_text_view_text_color">#757575</color>
+	<color name="checkout_activity_header_menu_dark_button_text_color">#000000</color>
+	
+	<!-- EditUserProfileActivity -->
+	<color name="edit_user_profile_activity_edit_user_profile_constraint_layout_background_color">#FFFFFF</color>
+	<color name="edit_user_profile_activity_updateprofile_constraint_layout_background_color">#00BCD4</color>
+	<color name="edit_user_profile_activity_updateprofile_constraint_layout_border_color">#979797</color>
+	<color name="edit_user_profile_activity_update_profile_text_view_text_color">#FFFFFF</color>
+	<color name="edit_user_profile_activity_mobile_constraint_layout_background_color">#EEEEEE</color>
+	<color name="edit_user_profile_activity_mobile_constraint_layout_border_color">#979797</color>
+	<color name="edit_user_profile_activity_mobile_number_text_view_text_color">#757575</color>
+	<color name="edit_user_profile_activity_email_constraint_layout_background_color">#EEEEEE</color>
+	<color name="edit_user_profile_activity_email_constraint_layout_border_color">#979797</color>
+	<color name="edit_user_profile_activity_email_address_text_view_text_color">#757575</color>
+	<color name="edit_user_profile_activity_dob_constraint_layout_background_color">#EEEEEE</color>
+	<color name="edit_user_profile_activity_dob_constraint_layout_border_color">#979797</color>
+	<color name="edit_user_profile_activity_date_of_birth_text_view_text_color">#757575</color>
+	<color name="edit_user_profile_activity_name_constraint_layout_background_color">#EEEEEE</color>
+	<color name="edit_user_profile_activity_name_constraint_layout_border_color">#979797</color>
+	<color name="edit_user_profile_activity_full_name_text_view_text_color">#757575</color>
+	<color name="edit_user_profile_activity_edit_profile_text_view_text_color">#757575</color>
+	<color name="edit_user_profile_activity_header_menu_dark_button_text_color">#000000</color>
+	
+	<!-- NavigationMenuActivity -->
+	<color name="navigation_menu_activity_navigation_menu_constraint_layout_background_color">#FFFFFF</color>
+	<color name="navigation_menu_activity_menu_background2_constraint_layout_background_color">#00BCD4</color>
+	<color name="navigation_menu_activity_menu_background2_constraint_layout_border_color">#979797</color>
+	<color name="navigation_menu_activity_signout_text_view_text_color">#FFFFFF</color>
+	<color name="navigation_menu_activity_settings_text_view_text_color">#FFFFFF</color>
+	<color name="navigation_menu_activity_orders_button_text_color">#FFFFFF</color>
+	<color name="navigation_menu_activity_messages_button_text_color">#FFFFFF</color>
+	<color name="navigation_menu_activity_profile_button_text_color">#FFFFFF</color>
+	<color name="navigation_menu_activity_name_text_view_text_color">#FFFFFF</color>
+	<color name="navigation_menu_activity_post_text_view_text_color">#FFFFFF</color>
+	
+	<!-- SignUpActivity -->
+	<color name="sign_up_activity_sign_up_constraint_layout_background_color">#FFFFFF</color>
+	<color name="sign_up_activity_sign_in_instead_button_text_color">#FFFFFF</color>
+	<color name="sign_up_activity_signupbutton_button_background_color">#00BCD4</color>
+	<color name="sign_up_activity_signupbutton_button_text_color">#FFFFFF</color>
+	<color name="sign_up_activity_signupbutton_button_border_color">#979797</color>
+	<color name="sign_up_activity_mobile_constraint_layout_background_color">#59FFFFFF</color>
+	<color name="sign_up_activity_mobile_constraint_layout_border_color">#979797</color>
+	<color name="sign_up_activity_mobile_number_text_view_text_color">#FFFFFF</color>
+	<color name="sign_up_activity_dob_constraint_layout_background_color">#59FFFFFF</color>
+	<color name="sign_up_activity_dob_constraint_layout_border_color">#979797</color>
+	<color name="sign_up_activity_date_of_birth_text_view_text_color">#FFFFFF</color>
+	<color name="sign_up_activity_email_constraint_layout_background_color">#59FFFFFF</color>
+	<color name="sign_up_activity_email_constraint_layout_border_color">#979797</color>
+	<color name="sign_up_activity_email_address_text_view_text_color">#FFFFFF</color>
+	<color name="sign_up_activity_full_name_constraint_layout_background_color">#59FFFFFF</color>
+	<color name="sign_up_activity_full_name_constraint_layout_border_color">#979797</color>
+	<color name="sign_up_activity_full_name_text_view_text_color">#FFFFFF</color>
+	<color name="sign_up_activity_title_text_view_text_color">#FFFFFF</color>
+	
+	<!-- SignInActivity -->
+	<color name="sign_in_activity_sign_in_constraint_layout_background_color">#FFFFFF</color>
+	<color name="sign_in_activity_forgot_password_text_view_text_color">#FFFFFF</color>
+	<color name="sign_in_activity_signinbutton_button_background_color">#00BCD4</color>
+	<color name="sign_in_activity_signinbutton_button_text_color">#FFFFFF</color>
+	<color name="sign_in_activity_signinbutton_button_border_color">#979797</color>
+	<color name="sign_in_activity_password_constraint_layout_background_color">#59FFFFFF</color>
+	<color name="sign_in_activity_password_constraint_layout_border_color">#979797</color>
+	<color name="sign_in_activity_password_text_view_text_color">#FFFFFF</color>
+	<color name="sign_in_activity_username_constraint_layout_background_color">#59FFFFFF</color>
+	<color name="sign_in_activity_username_constraint_layout_border_color">#979797</color>
+	<color name="sign_in_activity_username_text_view_text_color">#FFFFFF</color>
+	<color name="sign_in_activity_title_text_view_text_color">#FFFFFF</color>
+	
+	<!-- StartPageActivity -->
+	<color name="start_page_activity_start_page_constraint_layout_background_color">#FFFFFF</color>
+	<color name="start_page_activity_signup_button_background_color">#FFFFFF</color>
+	<color name="start_page_activity_signup_button_text_color">#757575</color>
+	<color name="start_page_activity_signup_button_border_color">#979797</color>
+	<color name="start_page_activity_signin_button_background_color">#00BCD4</color>
+	<color name="start_page_activity_signin_button_text_color">#FFFFFF</color>
+	<color name="start_page_activity_signin_button_border_color">#979797</color>
+	<color name="start_page_activity_tagline_text_view_text_color">#FFFFFF</color>
+	<color name="start_page_activity_title_text_view_text_color">#FFFFFF</color>
+	
+	<!-- WelcomeActivity -->
+	<color name="welcome_activity_welcome_constraint_layout_background_color">#FFFFFF</color>
+	<color name="welcome_activity_getstarted_button_background_color">#00BCD4</color>
+	<color name="welcome_activity_getstarted_button_text_color">#FFFFFF</color>
+	<color name="welcome_activity_getstarted_button_border_color">#979797</color>
+	<color name="welcome_activity_subheading_text_view_text_color">#FFFFFF</color>
+	<color name="welcome_activity_title_text_view_text_color">#FFFFFF</color>
+</resources>

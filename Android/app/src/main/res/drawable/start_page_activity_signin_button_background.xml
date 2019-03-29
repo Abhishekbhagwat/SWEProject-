@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<corners android:radius="@dimen/start_page_activity_signin_button_radius"/>
+
+	<solid android:color="@color/start_page_activity_signin_button_background_color"/>
+</shape>

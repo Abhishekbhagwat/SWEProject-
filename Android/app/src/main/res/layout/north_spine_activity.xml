@@ -1,0 +1,89 @@
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/north_spine_constraint_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/north_spine_activity_north_spine_constraint_layout_background_color">
+
+	<LinearLayout
+		android:id="@+id/chickenrice_button"
+		android:layout_width="@dimen/north_spine_activity_chickenrice_button_width"
+		android:layout_height="@dimen/north_spine_activity_chickenrice_button_height"
+		android:layout_marginTop="@dimen/north_spine_activity_chickenrice_button_margin_top"
+		android:background="?attr/selectableItemBackground"
+		android:gravity="center"
+		android:orientation="horizontal"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/ricestallrestaurent_constraint_layout"
+		tools:layout_editor_absoluteX="24dp"
+		tools:layout_editor_absoluteY="116dp"
+		style="@style/Widget.AppCompat.Button">
+	
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/bitmap_2"/>
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="@dimen/north_spine_activity_chickenrice_button_image_padding"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="start"
+			android:text="@string/north_spine_activity_chickenrice_button_text"
+			android:textColor="@color/north_spine_activity_chickenrice_button_text_color"
+			android:textSize="@dimen/north_spine_activity_chickenrice_button_text_size"/>
+	</LinearLayout>
+
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/ricestallrestaurent_constraint_layout"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="32dp"
+		android:layout_marginTop="28dp"
+		android:layout_marginEnd="32dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<TextView
+			android:id="@+id/rice_stall_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:layout_marginEnd="8dp"
+			android:fontFamily="@font/font_avenir_medium"
+			android:gravity="center"
+			android:text="@string/north_spine_activity_rice_stall_text_view_text"
+			android:textColor="@color/north_spine_activity_rice_stall_text_view_text_color"
+			android:textSize="@dimen/north_spine_activity_rice_stall_text_view_text_size"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@+id/cart_image_view2"
+			app:layout_constraintStart_toEndOf="@+id/header_menu_dark_image_view"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageView
+			android:id="@+id/header_menu_dark_image_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:scaleType="center"
+			android:src="@drawable/header_menu_dark"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageView
+			android:id="@+id/cart_image_view2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:scaleType="center"
+			android:src="@drawable/ic_baseline_local_grocery_store_24px"
+			android:tint="@color/cart_activity_cart_text_view_text_color"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+	</android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
