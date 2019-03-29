@@ -7,6 +7,23 @@ module.exports = (Dish, Location, Order, Store, User) => {
     else next('not store owner');
   });
 
+  //add a store
+  router.post('/addStore', (req, res, next) => {
+    (new Store({
+      name: req.body.name,
+      cuisine: req.body.cuisine,
+      location: req.body.location,
+      menu: req.body.menu,
+      rating: rating,
+      number: number,
+      cleanliness: req.body.cleanliness,
+      orders: order
+    })).save()
+    .then(() => res.json({success: true}))
+    .catch(next);
+  });
+
+
   //add a dish
   router.post('/addDish', (req, res, next) => {
     (new Dish({

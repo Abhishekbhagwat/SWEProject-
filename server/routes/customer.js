@@ -61,6 +61,21 @@ module.exports = (Dish, Location, Order, Store, User) => {
     }).catch('next');
   })
 
+  //check current place in queue
+  router.post('/placeInQueue', (req, res, next) => {
+    var queueNumber = 0;
+    for (let i = 0; i < Order.length; i++){
+        if (Order[i].status === 'accepted' || Order[i].status === "pending"){
+          queueNumber ++;
+          if (Order[i]._id === req.body._id){
+            break;
+          }
+        }
+    }
+    .then() => res.json({success: true, msg: `your place in queue is ${queueNumber}`})
+    .catch(next);
+  });
+
   //give rating to the store (only possible after an order is completed)
   router.post('/rating', (req, res, next) => {
     Order.find({_id: req.body._id})
@@ -70,8 +85,8 @@ module.exports = (Dish, Location, Order, Store, User) => {
         Store.findOneAndUpdate({_id: order.store}, {
           $set: {
             rating: {
-              score: (order.store.rating.number * order.store.rating.score + order.rating) / (order.store.rating.number + 1), 
-              number: order.store.rating.number + 1 
+              score: (order.store.rating.number * order.store.rating.score + order.rating) / (order.store.rating.number + 1),
+              number: order.store.rating.number + 1
             }
           }
         });
