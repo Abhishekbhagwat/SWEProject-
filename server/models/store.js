@@ -7,28 +7,40 @@ const storeSchema = new mongoose.Schema({
   },
   cuisine: [{
     type: String,
-    required: true
+    enum: ['American', 'Chinese', 'Indian', 'Indonesian', 'Italian', 'Japanese',
+          'Korean', 'Malay', 'Middle Eastern', 'Singaporean', 'Thai',
+          'Vietnamese', 'Western', 'Other']
   }],
-  location:{
+  location: {
     type: mongoose.Schema.ObjectId,
     ref: 'Location',
     required: true
   },
-  menu:[{
+  img: {
+    data: Buffer,
+    contentType: String
+  },
+  menu: [{
     type: mongoose.Schema.ObjectId,
     ref: 'Dish'
   }],
   rating: {
     score: {
-      type: Number
+      type: Number,
+      default: 0
     },
     number: {
-      type: Number
+      type: Number,
+      default: 0
     }
   },
   cleanliness: {
     type: String,
     required: true
+  },
+  open: {
+    type: Boolean,
+    default: false
   },
   orders: [{
     type: mongoose.Schema.ObjectId,

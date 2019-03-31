@@ -13,6 +13,7 @@ const auth = require('./routes/auth');
 const customer = require('./routes/customer');
 const storeowner = require('./routes/storeowner');
 
+const Cuisine = require('./models/cuisine')
 const Dish = require('./models/dish');
 const Location = require('./models/location');
 const Order = require('./models/order');
@@ -64,9 +65,9 @@ passport.use(new LocalStrategy((username, password, done) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/api', public());
+app.use('/api', public(Cuisine, Dish, Location, Store));
 app.use('/api', auth(url, passport, transporter, Token, User));
-app.use('/api', customer(Dish, Location, Order, Store, User));
+app.use('/api', customer(transporter, Dish, Location, Order, Store, User));
 app.use('/api/storeowner/', storeowner(Dish, Location, Order, Store, User));
 
 app.use('/*', (req, res) => res.status(404).json({success: false}));

@@ -16,25 +16,31 @@ module.exports = (url, passport, transporter, Token, User) => {
   });
 
   router.post('/register', (req, res, next) => {
-    (new User({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-      orders: []
-    })).save()
-    .then((result) => (new Token({user: result._id})).save())
-    .then((result) => {
-      let mailOptions = {
-        from: 'bitsplease.verify@gmail.com',
-        to: req.body.email,
-        subject: 'Please verify your account!',
-        html:  `<p>Please click on this
-                <a href="${url}/verify/${result._id}">LINK</a>
-                to verify your account.</p>`
+    User.find({email: req.body.email})
+    .then((user) => {
+      if (user) next('email already used');
+      else {
+        (new User({
+          name: req.body.name,
+          email: req.body.email,
+          password: req.body.password,
+          orders: []
+        })).save()
+        .then((result) => (new Token({user: result._id})).save())
+        .then((result) => {
+          let mailOptions = {
+            from: 'bitsplease.verify@gmail.com',
+            to: req.body.email,
+            subject: 'Please verify your account!',
+            html:  `<p>Please click on this
+                    <a href="${url}/verify/${result._id}">LINK</a>
+                    to verify your account.</p>`
+          }
+          transporter.sendMail(mailOptions)
+          .then(() => res.json({success: true}))
+          .catch((err) => next('invalid email'))
+        })
       }
-      transporter.sendMail(mailOptions)
-      .then(() => res.json({success: true}))
-      .catch((err) => next('invalid email'))
     }).catch(next);
   });
 

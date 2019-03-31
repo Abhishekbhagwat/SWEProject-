@@ -13,16 +13,13 @@ module.exports = (Dish, Location, Order, Store, User) => {
       name: req.body.name,
       cuisine: req.body.cuisine,
       location: req.body.location,
-      menu: req.body.menu,
-      rating: rating,
-      number: number,
-      cleanliness: req.body.cleanliness,
-      orders: order
+      img: req.body.img,
+      menu: [],
+      orders: []
     })).save()
     .then(() => res.json({success: true}))
     .catch(next);
   });
-
 
   //add a dish
   router.post('/addDish', (req, res, next) => {
@@ -30,8 +27,8 @@ module.exports = (Dish, Location, Order, Store, User) => {
       name: req.body.name,
       store: req.user.store,
       description: req.body.description,
-      price: req.body.price,
-      img: req.body.img
+      img: req.body.img,
+      price: req.body.price
     })).save()
     .then(() => res.json({success: true}))
     .catch(next);
@@ -52,6 +49,20 @@ module.exports = (Dish, Location, Order, Store, User) => {
   //remove a dish
   router.post('/removeDish', (req, res, next) => {
     Dish.findOneAndRemove({_id: req.body.dish})
+    .then(() => res.json({success: true}))
+    .catch(next);
+  });
+
+  //open store
+  router.post('/open', (req, res, next) => {
+    Store.findOneAndUpdate({_id: req.user.store}, {$set: {open: true}})
+    .then(() => res.json({success: true}))
+    .catch(next);
+  });
+
+  //close store
+  router.post('/close', (req, res, next) => {
+    Store.findOneAndUpdate({_id: req.user.store}, {$set: {open: false}})
     .then(() => res.json({success: true}))
     .catch(next);
   });

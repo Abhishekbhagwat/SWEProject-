@@ -1,6 +1,13 @@
 const router = require('express').Router();
 
-module.exports = (Dish, Location, Store) => {
+module.exports = (Cuisine, Dish, Location, Store) => {
+
+  //get list of all cuisines
+  router.get('/cuisines', (req, res, next) => {
+    Cuisine.find()
+    .then((locations) => res.json({success: true, cuisines: cuisines}))
+    .catch(next);
+  });
 
   //get list of all food locations
   router.get('/locations', (req, res, next) => {
@@ -17,8 +24,8 @@ module.exports = (Dish, Location, Store) => {
   });
 
   //get store by ID
-  router.get('/store/:id', (req, res) => {
-    Store.find({_id: req.params.id})
+  router.get('/store/:storeId', (req, res) => {
+    Store.find({_id: req.params.storeId})
     .then((store) => res.json({success: true, store: store}))
     .catch(next)
   });

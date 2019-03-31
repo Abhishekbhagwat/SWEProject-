@@ -1,19 +1,37 @@
 const router = require('express').Router();
 
-module.exports = (Dish, Location, Order, Store, User) => {
+module.exports = (transporter, Dish, Location, Order, Store, User) => {
 
-  //update user name
-  router.post('/updateProfile', (req, res, next) => {
-    User.update(req.user, {$set: {name: req.body.name}})
-    .then(() => res.json({success: true}))
-    .catch(next)
+  //get user profile
+  router.get('/profile', (req, res, next) => {
+    res.json({
+      success: true,
+      user: {name: req.user.name, email: req.user.email}
+    });
   });
 
-  //update email
-  router.post('/updateEmail', (req, res, next) => {
-    User.update(req.user, {$set: {email: req.body.email}})
-    .then(() => res.json({success: true}))
-    .catch(next)
+  //update user profile
+  router.post('/updateProfile', (req, res, next) => {
+    let update = {};
+    if (req.body.name) update.name = req.body.name;
+    if (req.body.password) update.password = req.body.password;
+    if (req.body.email) {
+      update.verified = false;
+      (new Token({user: req.user._id})).save()
+      .then((token) => (
+        transporter.sendMail({
+          from: 'bitsplease.verify@gmail.com',
+          to: req.body.email,
+          subject: 'Please verify your account!',
+          html:  `<p>Please click on this
+                  <a href="${url}/verify/${token._id}">LINK</a>
+                  to verify your account.</p>`
+        })
+      )).catch(() => next('invalid email'));
+    }
+    User.findOneAndUpdate({_id: req.user._id}, update)
+    .then((user) => res.json({success: true}))
+    .catch(next);
   });
 
   //get all orders by user
@@ -26,28 +44,34 @@ module.exports = (Dish, Location, Order, Store, User) => {
 
   //place an order
   router.post('/addOrder', (req, res, next) => {
-    Promise.all(req.body.dishes.map((dishId) => Dish.findById(dishId)))
-    .then((dishes) => (dishes.reduce((acc, dish) => (acc + dish.price), 0)))
-    .then((total) => (
-      (new Order({
-        user: req.user._id,
-        store: req.body.store,
-        dishes: req.body.dishes,
-        total: total,
-        timestamp: new Date()
-      })).save()
-    )).then((order) => {
-      User.find({store: req.body.store})
-      .then((owner) => (
-        (new Notification({
-          user: owner._id,
-          message: 'New order pending.',
-          category: 'order',
-          data: order._id,
-          timestamp: new Date()
-        })).save()
-      ))
-    }).catch(next)
+    Store.find({_id: req.body.store})
+    .then((store) => {
+      if (!store.open) next('store closed');
+      else {
+        Promise.all(req.body.dishes.map((dishId) => Dish.findById(dishId)))
+        .then((dishes) => (dishes.reduce((acc, dish) => (acc + dish.price), 0)))
+        .then((total) => (
+          (new Order({
+            user: req.user._id,
+            store: req.body.store,
+            dishes: req.body.dishes,
+            total: total,
+            timestamp: new Date()
+          })).save()
+        )).then((order) => (
+          User.find({store: req.body.store})
+          .then((owner) => (
+            (new Notification({
+              user: owner._id,
+              message: 'New order pending.',
+              category: 'order',
+              data: order._id,
+              timestamp: new Date()
+            })).save()
+          ))
+        )).catch(next);
+      }
+    })
   });
 
   //cancel an order (only possible for pending orders)
@@ -57,43 +81,43 @@ module.exports = (Dish, Location, Order, Store, User) => {
       if (order.status == 'pending') {
         order.remove();
         res.json({success: true});
-      } else res.json({success: false, msg:"order cannot be canceled"});
+      } else next('order cannot be canceled');
     }).catch('next');
   })
 
-  //check current place in queue
-  router.post('/placeInQueue', (req, res, next) => {
-    var queueNumber = 0;
-    for (let i = 0; i < Order.length; i++){
-        if (Order[i].status === 'accepted' || Order[i].status === "pending"){
-          queueNumber ++;
-          if (Order[i]._id === req.body._id){
-            break;
-          }
-        }
-    }
-    .then() => res.json({success: true, msg: `your place in queue is ${queueNumber}`})
-    .catch(next);
+  //get current place in queue
+  router.get('/queue/:orderId', (req, res, next) => {
+    Order.find({_id: orderId})
+    .then((order) => {
+      if (order.status !== 'accepted') next('not in queue');
+      else {
+        Store.find({_id: order.store})
+        .then((store) => {
+          store.orders.forEach((id, i) => {
+            if (id.equals(orderId)) res.json({success: true, place: i});
+          });
+        }).catch(next);
+      }
+    }).catch(() => next('invalid orderId'));
   });
 
-  //give rating to the store (only possible after an order is completed)
-  router.post('/rating', (req, res, next) => {
+  //rate store (only possible for completed orders)
+  router.post('/rate', (req, res, next) => {
     Order.find({_id: req.body._id})
     .then((order) => {
-      if (order.status == 'completed') {
-        Order.update(order, {$set: {rating: req.body.rating}});
-        Store.findOneAndUpdate({_id: order.store}, {
-          $set: {
-            rating: {
-              score: (order.store.rating.number * order.store.rating.score + order.rating) / (order.store.rating.number + 1),
-              number: order.store.rating.number + 1
-            }
-          }
-        });
-      } else next('You cannot rate the store as your order is not completed.');
-    })
-    .then(() => res.json({success: true}))
-    .catch(next);
+      if (order.status !== 'completed') next('not completed');
+      else {
+        Order.findOneAndUpdate(order, {$set: {rating: req.body.rating}})
+        .then((order) => (Store.find({_id: order.store})))
+        .then((store) => {
+          let update = {};
+          update.number = store.rating.number + 1;
+          update.score = (update.number * store.rating.score + req.body.rating) / update.number;
+          Store.findOneAndUpdate({_id: store._id}, update)
+        }).then(() => res.json({success: true}))
+        .catch('invalid orderId');
+      }
+    }).catch(next);
   });
 
   //get messages
@@ -138,8 +162,6 @@ module.exports = (Dish, Location, Order, Store, User) => {
     .then(() => res.json({success: true}))
     .catch(next);
   });
-
-
 
   return router;
 }
