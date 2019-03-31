@@ -8,12 +8,12 @@ const locationSchema = new mongoose.Schema({
   description: {
     type: String
   },
-  location: {
-    type: String
+  coordinates: {
+    lat: Number,
+    long: Number
   },
   img: {
-    data: Buffer,
-    contentType: String
+    type: String
   }
 });
 

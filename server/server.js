@@ -25,6 +25,8 @@ const url = "http://localhost:3000/api"
 
 mongoose.connection.on('connected', () => {
   console.log('Connected to database!');
+  //require('./data/cuisines')(Cuisine);
+  //require('./data/locations')(Location);
 });
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
 
