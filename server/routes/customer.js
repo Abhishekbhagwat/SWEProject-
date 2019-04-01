@@ -99,7 +99,7 @@ module.exports = (transporter, Dish, Location, Notification, Message, Order, Sto
           });
         }).catch(next);
       }
-    }).catch(() => next('invalid orderId'));
+    }).catch(() => next('invalid order'));
   });
 
   //rate store (only possible for completed orders)

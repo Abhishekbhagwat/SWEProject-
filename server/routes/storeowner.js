@@ -31,7 +31,6 @@ module.exports = (Dish, Location, Notification, Message, Order, Store, User) => 
       name: req.body.name,
       store: req.user.store,
       description: req.body.description,
-      img: req.body.img,
       price: req.body.price
     })).save()
     .then(() => res.json({success: true}))
@@ -42,9 +41,8 @@ module.exports = (Dish, Location, Notification, Message, Order, Store, User) => 
   router.post('/updateDish', (req, res, next) => {
     let update = {};
     if (req.body.name) update.name = req.body.name;
-    if (req.body.description) update.name = req.body.description;
-    if (req.body.price) update.name = req.body.price;
-    if (req.body.img) update.name = req.body.img;
+    if (req.body.description) update.description = req.body.description;
+    if (req.body.price) update.price = req.body.price;
     Dish.findOneAndUpdate(req.body.dish, {$set: update})
     .then(() => res.json({success: true}))
     .catch(next);
