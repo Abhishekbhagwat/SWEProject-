@@ -13,10 +13,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  orders: [{
-    type: mongoose.Schema.ObjectId,
-    ref: 'Order'
-  }],
   verified: {
     type: Boolean,
     default: false

@@ -23,8 +23,7 @@ module.exports = (url, passport, transporter, Token, User) => {
         (new User({
           name: req.body.name,
           email: req.body.email,
-          password: req.body.password,
-          orders: []
+          password: req.body.password
         })).save()
         .then((result) => (new Token({user: result._id})).save())
         .then((result) => {

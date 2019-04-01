@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-module.exports = (transporter, Dish, Location, Order, Store, User) => {
+module.exports = (transporter, Dish, Location, Notification, Message, Order, Store, User) => {
 
   //get user profile
   router.get('/profile', (req, res, next) => {
@@ -29,14 +29,14 @@ module.exports = (transporter, Dish, Location, Order, Store, User) => {
         })
       )).catch(() => next('invalid email'));
     }
-    User.findOneAndUpdate({_id: req.user._id}, update)
+    User.findOneAndUpdate({_id: req.user._id}, {$set: update})
     .then((user) => res.json({success: true}))
     .catch(next);
   });
 
   //get all orders by user
   router.get('/orders', (req, res, next) => {
-    Promise.all(req.user.orders.map((order) => Order.findById(order)))
+    Order.find({user: req.user._id})
     .sort({timestamp: -1})
     .then((orders) => res.json({success: true, orders: orders}))
     .catch(next);
@@ -44,11 +44,11 @@ module.exports = (transporter, Dish, Location, Order, Store, User) => {
 
   //place an order
   router.post('/addOrder', (req, res, next) => {
-    Store.find({_id: req.body.store})
+    Store.findOne({_id: req.body.store})
     .then((store) => {
       if (!store.open) next('store closed');
       else {
-        Promise.all(req.body.dishes.map((dishId) => Dish.findById(dishId)))
+        Promise.all(req.body.dishes.map((dishId) => Dish.findOne({_id: dishId})))
         .then((dishes) => (dishes.reduce((acc, dish) => (acc + dish.price), 0)))
         .then((total) => (
           (new Order({
@@ -59,7 +59,7 @@ module.exports = (transporter, Dish, Location, Order, Store, User) => {
             timestamp: new Date()
           })).save()
         )).then((order) => (
-          User.find({store: req.body.store})
+          User.findOne({store: req.body.store})
           .then((owner) => (
             (new Notification({
               user: owner._id,
@@ -69,14 +69,15 @@ module.exports = (transporter, Dish, Location, Order, Store, User) => {
               timestamp: new Date()
             })).save()
           ))
-        )).catch(next);
+        )).then(() => res.json({success: true}))
+        .catch(next);
       }
     })
   });
 
   //cancel an order (only possible for pending orders)
   router.post('/cancelOrder', (req, res, next) => {
-    Order.find({_id: req.body._id})
+    Order.findOne({_id: req.body.order})
     .then((order) => {
       if (order.status == 'pending') {
         order.remove();
@@ -87,14 +88,14 @@ module.exports = (transporter, Dish, Location, Order, Store, User) => {
 
   //get current place in queue
   router.get('/queue/:orderId', (req, res, next) => {
-    Order.find({_id: orderId})
+    Order.findOne({_id: req.params.orderId})
     .then((order) => {
       if (order.status !== 'accepted') next('not in queue');
       else {
-        Store.find({_id: order.store})
+        Store.findOne({_id: order.store})
         .then((store) => {
           store.orders.forEach((id, i) => {
-            if (id.equals(orderId)) res.json({success: true, place: i});
+            if (id.equals(req.params.orderId)) res.json({success: true, place: i});
           });
         }).catch(next);
       }
@@ -103,19 +104,18 @@ module.exports = (transporter, Dish, Location, Order, Store, User) => {
 
   //rate store (only possible for completed orders)
   router.post('/rate', (req, res, next) => {
-    Order.find({_id: req.body._id})
+    Order.findOne({_id: req.body.order})
     .then((order) => {
       if (order.status !== 'completed') next('not completed');
       else {
-        Order.findOneAndUpdate(order, {$set: {rating: req.body.rating}})
-        .then((order) => (Store.find({_id: order.store})))
+        Order.findOneAndUpdate({_id: order._id}, {$set: {rating: req.body.rating}})
+        .then((order) => (Store.findOne({_id: order.store})))
         .then((store) => {
-          let update = {};
-          update.number = store.rating.number + 1;
-          update.score = (update.number * store.rating.score + req.body.rating) / update.number;
-          Store.findOneAndUpdate({_id: store._id}, update)
+          let number = store.rating.number + 1;
+          let score = (number * store.rating.score + req.body.rating) / number;
+          return Store.findOneAndUpdate({_id: store._id}, {$set: {rating: {number, score}}});
         }).then(() => res.json({success: true}))
-        .catch('invalid orderId');
+        .catch('invalid order');
       }
     }).catch(next);
   });
@@ -149,9 +149,18 @@ module.exports = (transporter, Dish, Location, Order, Store, User) => {
     .catch(next);
   });
 
-  //get notifications
+  //get all notifications
   router.get('/notifications', (req, res, next) => {
     Notification.find({user: req.user._id})
+    .sort({timestamp: -1})
+    .then((notifications) => res.json({success: true, notifications: notifications}))
+    .catch(next);
+  });
+
+  //get new notifications
+  router.get('/newNotifications', (req, res, next) => {
+    Notification.find({user: req.user._id, read: false})
+    .sort({timestamp: -1})
     .then((notifications) => res.json({success: true, notifications: notifications}))
     .catch(next);
   });

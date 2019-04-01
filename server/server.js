@@ -16,6 +16,8 @@ const storeowner = require('./routes/storeowner');
 const Cuisine = require('./models/cuisine')
 const Dish = require('./models/dish');
 const Location = require('./models/location');
+const Message = require('./models/message');
+const Notification = require('./models/notification')
 const Order = require('./models/order');
 const Store = require('./models/store');
 const Token = require('./models/token');
@@ -69,8 +71,8 @@ app.use(passport.session());
 
 app.use('/api', public(Cuisine, Dish, Location, Store));
 app.use('/api', auth(url, passport, transporter, Token, User));
-app.use('/api', customer(transporter, Dish, Location, Order, Store, User));
-app.use('/api/storeowner/', storeowner(Dish, Location, Order, Store, User));
+app.use('/api', customer(transporter, Dish, Location, Notification, Message, Order, Store, User));
+app.use('/api/storeowner/', storeowner(Dish, Location, Notification, Message, Order, Store, User));
 
 app.use('/*', (req, res) => res.status(404).json({success: false}));
 app.use((err, req, res, next) => {

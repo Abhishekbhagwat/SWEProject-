@@ -31,8 +31,7 @@ const orderSchema = new mongoose.Schema({
     default: 'pending'
   },
   rating: {
-    type: Number,
-    required: true
+    type: Number
   }
 });
 

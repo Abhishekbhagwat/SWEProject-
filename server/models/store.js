@@ -12,13 +12,12 @@ const storeSchema = new mongoose.Schema({
           'Vietnamese', 'Western', 'Other']
   }],
   location: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'Location',
+    type: String,
     required: true
   },
   img: {
-    data: Buffer,
-    contentType: String
+    type: String,
+    required: true,
   },
   menu: [{
     type: mongoose.Schema.ObjectId,
@@ -48,6 +47,6 @@ const storeSchema = new mongoose.Schema({
   }],
 });
 
-const Store = mongoose.model('foodStore', storeSchema);
+const Store = mongoose.model('Store', storeSchema);
 
 module.exports = Store;

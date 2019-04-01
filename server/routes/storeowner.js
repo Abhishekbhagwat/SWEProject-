@@ -1,24 +1,28 @@
 const router = require('express').Router();
 
-module.exports = (Dish, Location, Order, Store, User) => {
-
-  router.use((req, res, next) => {
-    if (req.user.store) next();
-    else next('not store owner');
-  });
+module.exports = (Dish, Location, Notification, Message, Order, Store, User) => {
 
   //add a store
   router.post('/addStore', (req, res, next) => {
+    if (req.user.store) next('can only manage one store');
     (new Store({
       name: req.body.name,
       cuisine: req.body.cuisine,
       location: req.body.location,
       img: req.body.img,
+      cleanliness: req.body.cleanliness,
       menu: [],
       orders: []
     })).save()
+    .then((store) => (User.findOneAndUpdate({_id: req.user._id}, {$set: {store: store._id}})))
     .then(() => res.json({success: true}))
     .catch(next);
+  });
+
+  //ensure user is storeowner
+  router.use((req, res, next) => {
+    if (req.user.store) next();
+    else next('not store owner');
   });
 
   //add a dish
@@ -69,7 +73,7 @@ module.exports = (Dish, Location, Order, Store, User) => {
 
   //get pending orders
   router.get('/pending', (req, res, next) => {
-    Orders.find({store: req.user.store, status: 'pending'})
+    Order.find({store: req.user.store, status: 'pending'})
     .sort({timestamp: 1})
     .then((orders) => res.json({success: true, orders: orders}))
     .catch(next);
@@ -77,7 +81,7 @@ module.exports = (Dish, Location, Order, Store, User) => {
 
   //get current order queue
   router.get('/queue', (req, res, next) => {
-    Store.find({_id: req.user.store})
+    Store.findOne({_id: req.user.store})
     .sort({timestamp: 1})
     .populate('orders')
     .then((store) => res.json({success: true, orders: store.orders}))
@@ -104,10 +108,11 @@ module.exports = (Dish, Location, Order, Store, User) => {
   //reject order
   router.post('/reject', (req, res, next) => {
     Order.findOneAndUpdate({_id: req.body.order}, {$set: {status: 'rejected'}})
+    .populate('store')
     .then((order) => (
       (new Notification({
         user: order.user,
-        message: `${store.name} has rejected your order!`,
+        message: `${order.store.name} has rejected your order!`,
         category: 'order',
         data: order._id,
         timestamp: new Date(),

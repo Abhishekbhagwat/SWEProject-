@@ -5,7 +5,7 @@ module.exports = (Cuisine, Dish, Location, Store) => {
   //get list of all cuisines
   router.get('/cuisines', (req, res, next) => {
     Cuisine.find()
-    .then((locations) => res.json({success: true, cuisines: cuisines}))
+    .then((cuisines) => res.json({success: true, cuisines: cuisines}))
     .catch(next);
   });
 
@@ -25,7 +25,7 @@ module.exports = (Cuisine, Dish, Location, Store) => {
 
   //get store by ID
   router.get('/store/:storeId', (req, res) => {
-    Store.find({_id: req.params.storeId})
+    Store.findOne({_id: req.params.storeId})
     .then((store) => res.json({success: true, store: store}))
     .catch(next)
   });
@@ -38,15 +38,15 @@ module.exports = (Cuisine, Dish, Location, Store) => {
   });
 
   //get stores at specified location
-  router.get('/storesByLocation/:locationId', (req, res, next) => {
-    Store.find({location: req.params.locationId})
+  router.get('/storesByLocation/:location', (req, res, next) => {
+    Store.find({location: req.params.location})
     .then((stores) => res.json({success: true, stores: stores}))
     .catch(next);
   });
 
   //get stores offering specified cuisine
   router.get('/storesByCuisine/:cuisine', (req, res, next) => {
-    Store.find({cuisine: {$elemMatch: req.params.cuisine}})
+    Store.find({cuisine: req.params.cuisine})
     .then((stores) => res.json({success: true, stores: stores}))
     .catch(next);
   });
