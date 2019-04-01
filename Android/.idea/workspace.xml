@@ -36,32 +36,32 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gradle" value="4" />
-          <entry key="java" value="32" />
+          <entry key="java" value="33" />
           <entry key="svg" value="1" />
-          <entry key="xml" value="40" />
+          <entry key="xml" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="4" />
-          <entry key="JAVA" value="32" />
+          <entry key="JAVA" value="33" />
           <entry key="SVG" value="1" />
-          <entry key="XML" value="40" />
+          <entry key="XML" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="10" />
-          <entry key="java" value="2566" />
-          <entry key="txt" value="411" />
+          <entry key="java" value="2864" />
+          <entry key="txt" value="416" />
           <entry key="xml" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="10" />
-          <entry key="JAVA" value="2566" />
-          <entry key="PLAIN_TEXT" value="411" />
+          <entry key="JAVA" value="2864" />
+          <entry key="PLAIN_TEXT" value="416" />
           <entry key="XML" value="32" />
         </counts>
       </usages-collector>
@@ -82,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/GalleryCategoryActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="394">
-              <caret line="132" column="33" lean-forward="true" selection-start-line="132" selection-start-column="33" selection-end-line="132" selection-end-column="33" />
+              <caret line="132" column="33" selection-start-line="132" selection-start-column="33" selection-end-line="132" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/company_name/project/adapter/CuisineAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="173">
-              <caret line="60" column="42" lean-forward="true" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+              <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,12 +112,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sign_up_activity.xml">
           <provider selected="true" editor-type-id="android-designer2" />
           <provider editor-type-id="text-editor">
             <state relative-caret-position="2703">
-              <caret line="159" column="35" selection-start-line="159" selection-start-column="35" selection-end-line="159" selection-end-column="35" />
+              <caret line="164" column="35" selection-start-line="164" selection-start-column="35" selection-end-line="164" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -125,27 +125,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/SignUpActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="123" column="51" selection-start-line="123" selection-start-column="51" selection-end-line="123" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/chat_activity.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+            <state relative-caret-position="51">
+              <caret line="88" selection-start-line="88" selection-end-line="101" selection-end-column="19" />
+              <folding>
+                <element signature="e#2444#2445#0" expanded="true" />
+                <element signature="e#2477#2478#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/SignInActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="204">
+              <caret line="92" column="54" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sign_in_activity.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="1785">
+              <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/chat_activity.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -193,18 +207,18 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/NavigationMenuActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/company_name/project/model/User.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/company_name/project/SQLiteDatabaseHandler.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/SignInActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/sign_in_activity.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/company_name/project/model/Cuisine.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/gallery_category_activity.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/cuisine_row.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/north_spine_two_activity.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/sign_up_activity.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/GalleryCategoryActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/company_name/project/adapter/CuisineAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/SignUpActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/chat_activity.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/SignUpActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/SignInActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/sign_in_activity.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/sign_up_activity.xml" />
       </list>
     </option>
   </component>
@@ -262,12 +276,6 @@
               <item name="Project" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="Project" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="Project" type="1abcf292:AndroidViewProjectNode" />
@@ -400,10 +408,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2966443" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2966443" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -412,7 +419,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Find" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.32907802" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49932885" visible="true" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="1" sideWeight="0.49932885" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32907802" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32907802" />
@@ -571,21 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sign_in_activity.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="105" column="17" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/SignInActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="159" column="5" selection-start-line="85" selection-start-column="4" selection-end-line="159" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/StartPageActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -648,18 +640,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sign_up_activity.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="2703">
-          <caret line="159" column="35" selection-start-line="159" selection-start-column="35" selection-end-line="159" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/GalleryCategoryActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
-          <caret line="132" column="33" lean-forward="true" selection-start-line="132" selection-start-column="33" selection-end-line="132" selection-end-column="33" />
+          <caret line="132" column="33" selection-start-line="132" selection-start-column="33" selection-end-line="132" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -669,17 +653,10 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/company_name/project/adapter/CuisineAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
-          <caret line="60" column="42" lean-forward="true" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+          <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/SignUpActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="123" column="51" selection-start-line="123" selection-start-column="51" selection-end-line="123" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -691,6 +668,40 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/SignUpActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="88" selection-start-line="88" selection-end-line="101" selection-end-column="19" />
+          <folding>
+            <element signature="e#2444#2445#0" expanded="true" />
+            <element signature="e#2477#2478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/company_name/project/activity/SignInActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="92" column="54" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sign_in_activity.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sign_up_activity.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="2703">
+          <caret line="164" column="35" selection-start-line="164" selection-start-column="35" selection-end-line="164" selection-end-column="35" />
         </state>
       </provider>
     </entry>

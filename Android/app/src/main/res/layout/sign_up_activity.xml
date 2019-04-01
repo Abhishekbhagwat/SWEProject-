@@ -65,9 +65,10 @@
 
 		<EditText
 			android:id="@+id/password_text_view"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="8dp"
+			android:layout_marginEnd="24dp"
 			android:background="@android:color/transparent"
 			android:focusable="auto"
 			android:fontFamily="@font/font_avenir_medium"
@@ -80,6 +81,7 @@
 			android:textColorHint="@color/sign_up_activity_signupbutton_button_text_color"
 			android:textSize="@dimen/sign_up_activity_date_of_birth_text_view_text_size"
 			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toEndOf="@+id/icon24px_two_image_view"
 			app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,9 +111,10 @@
 
 		<EditText
 			android:id="@+id/email_address_text_view"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="8dp"
+			android:layout_marginEnd="24dp"
 			android:background="@android:color/transparent"
 			android:focusable="auto"
 			android:fontFamily="@font/font_avenir_medium"
@@ -124,6 +127,7 @@
 			android:textColorHint="@color/sign_up_activity_signupbutton_button_text_color"
 			android:textSize="@dimen/sign_up_activity_email_address_text_view_text_size"
 			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toEndOf="@+id/icon24px_three_image_view"
 			app:layout_constraintTop_toTopOf="parent" />
 
@@ -151,9 +155,10 @@
 
 		<EditText
 			android:id="@+id/full_name_text_view"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_marginLeft="8dp"
+			android:layout_marginStart="8dp"
+			android:layout_marginEnd="24dp"
 			android:background="@android:color/transparent"
 			android:focusable="auto"
 			android:fontFamily="@font/font_avenir_medium"
@@ -166,7 +171,8 @@
 			android:textColorHint="@color/sign_up_activity_signupbutton_button_text_color"
 			android:textSize="@dimen/sign_up_activity_full_name_text_view_text_size"
 			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintLeft_toRightOf="@+id/person_material_image_view"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/person_material_image_view"
 			app:layout_constraintTop_toTopOf="parent" />
 
 		<ImageView

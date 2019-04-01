@@ -66,7 +66,7 @@ public class SignInActivity extends AppCompatActivity {
 		// Configure signInButton component
 		signinbuttonButton = this.findViewById(R.id.signinbutton_button);
 		signinbuttonButton.setOnClickListener((view) -> {
-			this.startActivity(GalleryCategoryActivity.newIntent(this));
+			validateInput();
 		});
 		google_sign_in_image_view = this.findViewById(R.id.google_sign_in_image_view);
 		google_sign_in_image_view.setOnClickListener((view) -> {
@@ -81,6 +81,21 @@ public class SignInActivity extends AppCompatActivity {
 		
 		// Configure title component
 		titleTextView = this.findViewById(R.id.title_text_view);
+	}
+
+	public void validateInput() {
+		boolean valid = true;
+		if(usernameTextView.getText().toString().isEmpty()) {
+			usernameTextView.setError("Email mandatory");
+			valid = false;
+		}
+		if(passwordTextView.getText().toString().isEmpty()) {
+			passwordTextView.setError("Password mandatory");
+			valid = false;
+		}
+		if(valid) {
+			this.startActivity(GalleryCategoryActivity.newIntent(this));
+		}
 	}
 
 	public void validateUser(String username, String password) {

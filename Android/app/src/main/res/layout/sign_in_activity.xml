@@ -64,9 +64,10 @@
 
 		<EditText
 			android:id="@+id/password_text_view"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="7dp"
+			android:layout_marginEnd="24dp"
 			android:background="@android:color/transparent"
 			android:editable="true"
 			android:fontFamily="@font/font_avenir_medium"
@@ -78,6 +79,7 @@
 			android:textColorHint="@color/sign_in_activity_signinbutton_button_text_color"
 			android:textSize="@dimen/sign_in_activity_password_text_view_text_size"
 			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toEndOf="@+id/icon24px_image_view"
 			app:layout_constraintTop_toTopOf="parent" />
 
@@ -105,21 +107,24 @@
 
 		<EditText
 			android:id="@+id/username_text_view"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_marginLeft="@dimen/sign_in_activity_username_text_view_margin_start"
+			android:layout_marginStart="8dp"
+			android:layout_marginEnd="24dp"
 			android:background="@android:color/transparent"
 			android:editable="true"
 			android:fontFamily="@font/font_avenir_medium"
 			android:gravity="start"
-			android:hint="@string/sign_in_activity_username_text_view_text"
+			android:hint="Email"
 			android:inputType="text"
 			android:lineSpacingMultiplier="1.17"
+			android:textAlignment="textStart"
 			android:textColor="@color/sign_in_activity_username_text_view_text_color"
 			android:textColorHint="@color/sign_in_activity_signinbutton_button_text_color"
 			android:textSize="@dimen/sign_in_activity_username_text_view_text_size"
 			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintLeft_toRightOf="@+id/person_material_image_view"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/person_material_image_view"
 			app:layout_constraintTop_toTopOf="parent" />
 
 		<ImageView

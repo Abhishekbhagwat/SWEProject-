@@ -82,13 +82,27 @@ public class SignUpActivity extends AppCompatActivity {
 	}
 	
 	public void onSignInInsteadPressed() {
-	
 		this.startSignInActivity();
 	}
 	
 	public void onSignUpButtonPressed() {
-		validateUser();
-		this.startGalleryCategoryActivity();
+		boolean valid = true;
+		if(emailAddressTextView.getText().toString().isEmpty()) {
+			emailAddressTextView.setError("Email mandatory");
+			valid = false;
+		}
+		if(passwordTextView.getText().toString().isEmpty()) {
+			passwordTextView.setError("Password mandatory");
+			valid = false;
+		}
+		if(fullNameTextView.getText().toString().isEmpty()) {
+			fullNameTextView.setError("Name mandatory");
+			valid = false;
+		}
+		if(valid) {
+			validateUser();
+			this.startGalleryCategoryActivity();
+		}
 	}
 	
 	private void startSignInActivity() {
