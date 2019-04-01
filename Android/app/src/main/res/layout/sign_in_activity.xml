@@ -9,13 +9,11 @@
 
 	<ImageView
 		android:id="@+id/sign_up_image_view"
-		android:layout_width="412dp"
-		android:layout_height="wrap_content"
-		android:layout_marginLeft="@dimen/sign_in_activity_sign_up_image_view_margin_start"
-		android:layout_marginTop="@dimen/sign_in_activity_sign_up_image_view_margin_top"
-		android:layout_marginRight="@dimen/sign_in_activity_sign_up_image_view_margin_end"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
 		android:scaleType="centerCrop"
 		android:src="@drawable/sign_up"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintLeft_toLeftOf="parent"
 		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
@@ -179,13 +177,4 @@
 		app:layout_constraintTop_toBottomOf="@+id/signinbutton_button"
 		app:srcCompat="@drawable/google_sign_in" />
 
-	<ImageView
-		android:id="@+id/facebook_sign_in__image_view"
-		android:layout_width="0dp"
-		android:layout_height="50dp"
-		android:layout_marginTop="16dp"
-		app:layout_constraintEnd_toEndOf="@+id/signinbutton_button"
-		app:layout_constraintStart_toStartOf="@+id/signinbutton_button"
-		app:layout_constraintTop_toBottomOf="@+id/google_sign_in_image_view"
-		app:srcCompat="@drawable/facebook_sign_in" />
 </android.support.constraint.ConstraintLayout>

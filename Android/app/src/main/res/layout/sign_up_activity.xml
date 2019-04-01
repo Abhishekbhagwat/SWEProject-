@@ -10,7 +10,7 @@
 	<ImageView
 		android:id="@+id/background_image_view"
 		android:layout_width="0dp"
-		android:layout_height="wrap_content"
+		android:layout_height="0dp"
 		android:scaleType="centerCrop"
 		android:src="@drawable/background_3"
 		app:layout_constraintBottom_toBottomOf="parent"
@@ -49,51 +49,7 @@
 		android:textSize="@dimen/sign_up_activity_signupbutton_button_text_size"
 		app:layout_constraintLeft_toLeftOf="parent"
 		app:layout_constraintRight_toRightOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/mobile_constraint_layout" />
-
-	<android.support.constraint.ConstraintLayout
-		android:id="@+id/mobile_constraint_layout"
-		android:layout_width="@dimen/sign_up_activity_mobile_constraint_layout_width"
-		android:layout_height="@dimen/sign_up_activity_mobile_constraint_layout_height"
-		android:layout_marginTop="@dimen/sign_up_activity_mobile_constraint_layout_margin_top"
-		android:background="@drawable/sign_up_activity_mobile_constraint_layout_background"
-		app:layout_constraintLeft_toLeftOf="parent"
-		app:layout_constraintRight_toRightOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/dob_constraint_layout"
-		tools:layout_editor_absoluteX="25dp"
-		tools:layout_editor_absoluteY="425dp">
-
-		<EditText
-			android:id="@+id/mobile_number_text_view"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginStart="8dp"
-			android:background="@android:color/transparent"
-			android:focusable="auto"
-			android:fontFamily="@font/font_avenir_medium"
-			android:gravity="start"
-			android:hint="@string/sign_up_activity_mobile_number_text_view_text"
-			android:inputType="phone"
-			android:lineSpacingMultiplier="1.17"
-			android:textColor="@color/sign_up_activity_mobile_number_text_view_text_color"
-			android:textColorHighlight="@color/sign_up_activity_signupbutton_button_text_color"
-			android:textColorHint="@color/sign_up_activity_signupbutton_button_text_color"
-			android:textSize="@dimen/sign_up_activity_mobile_number_text_view_text_size"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintStart_toEndOf="@+id/icon24px_image_view"
-			app:layout_constraintTop_toTopOf="parent" />
-
-		<ImageView
-			android:id="@+id/icon24px_image_view"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginLeft="@dimen/sign_up_activity_icon24px_image_view_margin_start"
-			android:scaleType="center"
-			android:src="@drawable/icon_24px_7"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintLeft_toLeftOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
-	</android.support.constraint.ConstraintLayout>
+		app:layout_constraintTop_toBottomOf="@+id/dob_constraint_layout" />
 
 	<android.support.constraint.ConstraintLayout
 		android:id="@+id/dob_constraint_layout"
@@ -108,7 +64,7 @@
 		tools:layout_editor_absoluteY="350dp">
 
 		<EditText
-			android:id="@+id/date_of_birth_text_view"
+			android:id="@+id/password_text_view"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="8dp"
@@ -116,8 +72,8 @@
 			android:focusable="auto"
 			android:fontFamily="@font/font_avenir_medium"
 			android:gravity="start"
-			android:hint="@string/sign_up_activity_date_of_birth_text_view_text"
-			android:inputType="date"
+			android:hint="Password"
+			android:inputType="textPassword"
 			android:lineSpacingMultiplier="1.17"
 			android:textColor="@color/sign_up_activity_date_of_birth_text_view_text_color"
 			android:textColorHighlight="@color/sign_up_activity_signupbutton_button_text_color"

@@ -29,6 +29,7 @@ public class NavigationMenuActivity extends AppCompatActivity {
 	private LinearLayout profileButton;
 	private TextView nameTextView;
 	private TextView postTextView;
+	private ConstraintLayout signoutButton;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -49,15 +50,20 @@ public class NavigationMenuActivity extends AppCompatActivity {
 		// Configure Messages component
 		messagesButton = this.findViewById(R.id.messages_button);
 		messagesButton.setOnClickListener((view) -> {
-	this.onMessagesPressed();
-});
+			this.onMessagesPressed();
+		});
 		
 		// Configure Profile component
 		profileButton = this.findViewById(R.id.profile_button);
 		profileButton.setOnClickListener((view) -> {
-	this.onProfilePressed();
-});
-		
+			this.onProfilePressed();
+		});
+
+		signoutButton = this.findViewById(R.id.signout_constraint_layout);
+		signoutButton.setOnClickListener((view) -> {
+			this.startActivity(StartPageActivity.newIntent(this));
+		});
+
 		// Configure Name component
 		nameTextView = this.findViewById(R.id.name_text_view);
 		

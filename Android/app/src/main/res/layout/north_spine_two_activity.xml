@@ -57,7 +57,7 @@
 			android:layout_marginEnd="8dp"
 			android:fontFamily="@font/font_avenir_medium"
 			android:gravity="center"
-			android:text="@string/north_spine_two_activity_north_spine_food_cou_text_view_text"
+			android:text="Singaporean"
 			android:textColor="@color/north_spine_two_activity_north_spine_food_cou_text_view_text_color"
 			android:textSize="@dimen/north_spine_two_activity_north_spine_food_cou_text_view_text_size"
 			app:layout_constraintBottom_toBottomOf="parent"
