@@ -5,6 +5,7 @@ module.exports = (Cuisine, Dish, Location, Store) => {
   //get list of all cuisines
   router.get('/cuisines', (req, res, next) => {
     Cuisine.find()
+    .sort('name')
     .then((cuisines) => res.json({success: true, cuisines: cuisines}))
     .catch(next);
   });
@@ -12,6 +13,7 @@ module.exports = (Cuisine, Dish, Location, Store) => {
   //get list of all food locations
   router.get('/locations', (req, res, next) => {
     Location.find()
+    .sort('name')
     .then((locations) => res.json({success: true, locations: locations}))
     .catch(next);
   });
@@ -19,6 +21,7 @@ module.exports = (Cuisine, Dish, Location, Store) => {
   //get list of all stores
   router.get('/stores', (req, res, next) => {
     Store.find()
+    .sort('name')
     .then((stores) => res.json({success: true, stores: stores}))
     .catch(next);
   });
@@ -40,6 +43,7 @@ module.exports = (Cuisine, Dish, Location, Store) => {
   //get stores at specified location
   router.get('/storesByLocation/:location', (req, res, next) => {
     Store.find({location: req.params.location})
+    .sort('name')
     .then((stores) => res.json({success: true, stores: stores}))
     .catch(next);
   });
@@ -47,6 +51,7 @@ module.exports = (Cuisine, Dish, Location, Store) => {
   //get stores offering specified cuisine
   router.get('/storesByCuisine/:cuisine', (req, res, next) => {
     Store.find({cuisine: req.params.cuisine})
+    .sort('name')
     .then((stores) => res.json({success: true, stores: stores}))
     .catch(next);
   });
@@ -55,6 +60,7 @@ module.exports = (Cuisine, Dish, Location, Store) => {
   router.get('/storesByDish/:dish', (req, res, next) => {
     Dish.find({name: req.params.dish})
     .populate('store')
+    .sort('name')
     .then((dishes) => res.json({success: true, stores: dishes.map((dish) => (dish.store))}))
     .catch(next);
   });
@@ -62,6 +68,7 @@ module.exports = (Cuisine, Dish, Location, Store) => {
   //get store menu
   router.get('/menu/:storeId', (req, res, next) => {
     Dish.find({store: req.params.storeId})
+    .sort('name')
     .then((dishes) => res.json({success: true, dishes: dishes}))
     .catch(next);
   });
