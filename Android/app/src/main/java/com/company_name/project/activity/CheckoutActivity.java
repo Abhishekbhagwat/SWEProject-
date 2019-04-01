@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.view.View;
 import android.os.Bundle;
 import android.content.Context;
+import android.widget.Toast;
 
 
 public class CheckoutActivity extends AppCompatActivity {
@@ -50,8 +51,9 @@ public class CheckoutActivity extends AppCompatActivity {
 		// Configure continuePayment component
 		continuepaymentButton = this.findViewById(R.id.continuepayment_button);
 		continuepaymentButton.setOnClickListener((view) -> {
-	this.onContinuePaymentPressed();
-});
+			Toast.makeText(getApplicationContext(), "Payment successful!", Toast.LENGTH_LONG).show();
+			this.startActivity(GalleryCategoryActivity.newIntent(this));
+		});
 		
 		// Configure Method Name component
 		methodNameTextView = this.findViewById(R.id.method_name_text_view);
@@ -83,27 +85,7 @@ public class CheckoutActivity extends AppCompatActivity {
 		// Configure Header Menu dark component
 		headerMenuDarkButton = this.findViewById(R.id.header_menu_dark_button);
 		headerMenuDarkButton.setOnClickListener((view) -> {
-	this.onHeaderMenuDarkPressed();
-});
-	}
-	
-	public void onContinuePaymentPressed() {
-	
-		this.startPaymentDetailsActivity();
-	}
-	
-	public void onHeaderMenuDarkPressed() {
-	
-		this.startNavigationMenuActivity();
-	}
-	
-	private void startPaymentDetailsActivity() {
-	
-		this.startActivity(PaymentDetailsActivity.newIntent(this));
-	}
-	
-	private void startNavigationMenuActivity() {
-	
-		this.startActivity(NavigationMenuActivity.newIntent(this));
+			this.startActivity(NavigationMenuActivity.newIntent(this));
+		});
 	}
 }

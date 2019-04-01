@@ -113,7 +113,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 	}
 	
 	private void startCheckoutActivity() {
-	
+
 		this.startActivity(CheckoutActivity.newIntent(this));
 	}
 	
