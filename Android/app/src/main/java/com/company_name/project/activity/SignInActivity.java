@@ -94,11 +94,12 @@ public class SignInActivity extends AppCompatActivity {
 			valid = false;
 		}
 		if(valid) {
+			validateUser();
 			this.startActivity(GalleryCategoryActivity.newIntent(this));
 		}
 	}
 
-	public void validateUser(String username, String password) {
+	public void validateUser() {
 		String getCustomers = "http://10.0.2.2:3000/api/login";
 		JSONObject jsonObject = new JSONObject();
 		try {

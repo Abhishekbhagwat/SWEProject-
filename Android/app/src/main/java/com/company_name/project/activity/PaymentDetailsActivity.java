@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.view.View;
 import android.os.Bundle;
 import android.content.Context;
+import android.widget.Toast;
 
 
 public class PaymentDetailsActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class PaymentDetailsActivity extends AppCompatActivity {
 		// Fill the created intent with the data you want to be passed to this Activity when it's opened.
 		return new Intent(context, PaymentDetailsActivity.class);
 	}
-	
+	private ConstraintLayout card_constraint_layout;
 	private TextView addNewCardTextView;
 	private TextView expMonthTextView;
 	private TextView expYearTextView;
@@ -95,8 +96,14 @@ public class PaymentDetailsActivity extends AppCompatActivity {
 		// Configure Header Menu dark component
 		headerMenuDarkButton = this.findViewById(R.id.header_menu_dark_button);
 		headerMenuDarkButton.setOnClickListener((view) -> {
-	this.onHeaderMenuDarkPressed();
-});
+			this.onHeaderMenuDarkPressed();
+		});
+
+		card_constraint_layout = this.findViewById(R.id.card_constraint_layout);
+		card_constraint_layout.setOnClickListener(view -> {
+			Toast.makeText(getApplicationContext(), "Payment successful!", Toast.LENGTH_LONG).show();
+			this.startActivity(GalleryCategoryActivity.newIntent(this));
+		});
 	}
 	
 	public void onHeaderMenuDarkPressed() {

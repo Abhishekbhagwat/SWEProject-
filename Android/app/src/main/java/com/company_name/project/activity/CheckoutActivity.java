@@ -51,8 +51,7 @@ public class CheckoutActivity extends AppCompatActivity {
 		// Configure continuePayment component
 		continuepaymentButton = this.findViewById(R.id.continuepayment_button);
 		continuepaymentButton.setOnClickListener((view) -> {
-			Toast.makeText(getApplicationContext(), "Payment successful!", Toast.LENGTH_LONG).show();
-			this.startActivity(GalleryCategoryActivity.newIntent(this));
+			this.startActivity(PaymentDetailsActivity.newIntent(this));
 		});
 		
 		// Configure Method Name component
